@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GroundOne provides absolute clarity for your physical operations through unbiased field intelligence.">
+    <title>GroundOne | Operational Intelligence</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-deep: #011819;
+            --bg-navy: #052349;
+            --core-blue: #0043a8;
+            --accent-cyan: #10b4e1;
+            --action-green: #c2ff75;
+            --white: #ffffff;
+            --text-muted: #8fa3b0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- NAV --- */
+        .nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 40px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--accent-cyan); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 160px 5% 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            max-width: 900px;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        p.subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            max-width: 600px;
+            margin-bottom: 40px;
+            color: var(--text-muted); 
+            line-height: 1.6;
+        }
+
+        .btn-group { 
+            display: flex; 
+            gap: 16px; 
+            margin-bottom: 80px; 
+        }
+
+        .btn {
+            padding: 16px 32px;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--action-green);
+            color: var(--bg-deep);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(194, 255, 117, 0.2);
+        }
+
+        .btn-secondary {
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(16, 180, 225, 0.05);
+        }
+
+        /* --- THE "SAAS" DASHBOARD GRAPHIC --- */
+        .abstract-dashboard {
+            width: 100%;
+            max-width: 1000px;
+            height: 450px;
+            background-color: var(--bg-navy);
+            border: 1px solid var(--core-blue);
+            border-radius: 12px 12px 0 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-bottom: none;
+            box-shadow: 0 -20px 80px rgba(0, 67, 168, 0.15);
+        }
+
+        .dash-header {
+            height: 60px;
+            border-bottom: 1px solid var(--core-blue);
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            gap: 8px;
+        }
+
+        .dash-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--core-blue);
+        }
+        .dash-dot:nth-child(1) { background-color: var(--accent-cyan); }
+
+        .dash-body {
+            display: flex;
+            height: 100%;
+            padding: 32px;
+            gap: 32px;
+        }
+
+        .dash-sidebar {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .dash-line {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            width: 100%;
+        }
+        .dash-line.active { background: var(--core-blue); width: 80%; }
+
+        .dash-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .dash-metric-row {
+            display: flex;
+            gap: 16px;
+        }
+
+        .dash-metric {
+            flex: 1;
+            height: 100px;
+            background: rgba(0, 67, 168, 0.2);
+            border: 1px solid rgba(16, 180, 225, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+        }
+
+        .dash-chart-bar {
+            height: 4px;
+            background: var(--action-green);
+            border-radius: 2px;
+        }
+
+        /* --- ASYMMETRIC BENTO GRID (Services) --- */
+        .section {
+            padding: 120px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--accent-cyan);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        .bento-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 24px;
+        }
+
+        .bento-item {
+            background-color: rgba(5, 35, 73, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 48px;
+            transition: all 0.3s ease;
+        }
+
+        .bento-item:hover {
+            border-color: var(--accent-cyan);
+            background-color: var(--bg-navy);
+        }
+
+        .bento-item.featured {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .bento-item h3 {
+            font-size: 1.8rem;
+            margin: 0 0 16px 0;
+            color: var(--white);
+        }
+
+        .bento-item p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } 
+            .btn-group { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; box-sizing: border-box; }
+            .abstract-dashboard { height: 250px; }
+            .dash-sidebar { display: none; }
+            .bento-layout { grid-template-columns: 1fr; }
+            .bento-item.featured { flex-direction: column; align-items: flex-start; }
+            .bento-item { padding: 32px; }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <nav class="nav">
+        <!-- SVG Logo with aria-hidden -->
+        <a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer;">
+            <svg aria-hidden="true" width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M85 40 A 40 40 0 1 0 50 90" stroke="#ffffff" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <line x1="45" y1="50" x2="85" y2="90" stroke="#c2ff75" stroke-width="10" stroke-linecap="round"/>
+                <line x1="45" y1="50" x2="45" y2="70" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+            <span style="font-size: 26px; font-weight: 700; color: var(--white); letter-spacing: -1px;">
+                Ground<span style="color: var(--action-green); font-weight: 500;">One</span>
+            </span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#how-it-works">How It Works</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Your single source of<br>ground truth.</h1>
+        <p class="subtitle">Absolute clarity for your physical operations. Unbiased field intelligence and compliance auditing for multi-location enterprises.</p>
+        
+        <div class="btn-group">
+            <a href="https://forms.gle/YOUR_FORM_ID_HERE" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Request an Audit</a>
+            <a href="#services" class="btn btn-secondary">Explore Capabilities</a>
+        </div>
+
+        <div class="abstract-dashboard">
+            <div class="dash-header">
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+                <div class="dash-dot"></div>
+            </div>
+            <div class="dash-body">
+                <div class="dash-sidebar">
+                    <div class="dash-line active"></div>
+                    <div class="dash-line"></div>
+                    <div class="dash-line"></div>
+                    <div class="dash-line"></div>
+                </div>
+                <div class="dash-main">
+                    <div class="dash-metric-row">
+                        <div class="dash-metric"><div class="dash-chart-bar" style="width: 40%"></div></div>
+                        <div class="dash-metric"><div class="dash-chart-bar" style="width: 75%"></div></div>
+                        <div class="dash-metric"><div class="dash-chart-bar" style="width: 90%; background: var(--accent-cyan)"></div></div>
+                    </div>
+                    <div style="flex-grow: 1; background: rgba(255,255,255,0.02); border: 1px dashed var(--core-blue); border-radius: 8px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Intelligence from the floor.</h2>
+        </div>
+
+        <div class="bento-layout">
+            <div class="bento-item featured">
+                <div>
+                    <h3>Mystery Shopping</h3>
+                    <p>Real customers evaluate staff behavior, service quality, product presentation, and the complete customer experience without the friction of a manager's presence.</p>
+                </div>
+                <div style="min-width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--bg-navy); border-top-color: var(--action-green); transform: rotate(45deg);"></div>
+            </div>
+            
+            <div class="bento-item">
+                <h3>Outlet Audits</h3>
+                <p>Rigorous evaluations of brand standards, operational hygiene, and visual merchandising to ensure strict compliance across your entire footprint.</p>
+            </div>
+            
+            <div class="bento-item">
+                <h3>CX Diagnostics</h3>
+                <p>Identify critical service failures, recurring location-based issues, and hidden gaps in your standard operating procedures before they impact revenue.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+        <div class="section-header">
+            <span class="section-tag">Process</span>
+            <h2 class="section-title">How It Works</h2>
+        </div>
+        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Content coming soon.</p>
+    </section>
+
+</body>
+</html>
