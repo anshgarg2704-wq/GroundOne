@@ -1,173 +1,578 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GroundOne - On-Ground Intelligence & Retail Auditing</title>
+    <title>GroundOne — Ground-Level Intelligence</title>
+    <meta name="description" content="GroundOne turns on-ground activity into clear, actionable business insights helping you identify gaps, make informed decisions, and improve performance.">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            muted: '#64748b',
+                            light: '#f8fafc',
+                            card: '#ffffff',
+                            border: '#e2e8f0',
+                            accent: '#00b0fb'
+                        }
+                    }
+                }
+            }
         }
-    </style>
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#00b0fb] selection:text-white">
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-[#00b0fb] selection:text-white">
 
     <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-border shadow-xs">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <!-- Styled Logo Font Representation -->
-                <div class="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center">
-                    GROUND<span class="text-[#00b0fb]">ONE</span>
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="h-10 w-auto flex items-center">
+                    <img src="final groundone logo.jpg" alt="GroundOne Logo" class="h-10 w-auto rounded-lg shadow-xs object-contain">
                 </div>
-            </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
-                <a href="#services" class="hover:text-slate-900 transition-colors">Solutions</a>
-                <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
-            </nav>
-            <div>
-                <a href="#contact" class="bg-[#00b0fb] hover:bg-[#0092d6] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm transition-all">
-                    Request an Audit
-                </a>
+            </a>
+            <div class="flex items-center space-x-12 ml-auto">
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
+                    <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
+                    <a href="#how-it-works" class="hover:text-[#00b0fb] transition-colors">How It Works</a>
+                    <a href="#why-groundone" class="hover:text-[#00b0fb] transition-colors">Why GroundOne</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium uppercase tracking-wider text-slate-700 hover:text-[#00b0fb] border border-brand-border bg-slate-50 px-4 py-2 rounded-full transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-[#00b0fb]"></i>
+                        <span>Chat with Us</span>
+                    </a>
+                    <a href="#contact" class="bg-[#00b0fb] hover:bg-[#0092d6] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-sm">
+                        Request an Audit
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-20 pb-28 overflow-hidden bg-white">
-        <div class="max-w-7xl mx-auto px-6 text-center max-px relative z-10">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-600 mb-8 uppercase tracking-wider">
-                B2B Retail Auditing & Market Intelligence
-            </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6 max-w-4xl mx-auto">
-                Turn Ground Reality Into Better Decisions
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed mb-10">
-                We uncover what’s happening across your customer-facing operations and transform real-world observations into actionable insights that drive better business performance.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#contact" class="w-full sm:w-auto bg-[#00b0fb] hover:bg-[#0092d6] text-white px-8 py-3.5 rounded-xl font-semibold shadow-lg shadow-[#00b0fb]/20 transition-all">
-                    Request an Audit
-                </a>
-                <a href="#about" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 px-8 py-3.5 rounded-xl font-semibold transition-all">
-                    Learn More
-                </a>
+    <section class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden bg-gradient-to-b from-sky-50/50 to-white border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-6 bg-sky-50 px-3.5 py-1.5 rounded-full border border-sky-100">
+                    <span>GROUND-LEVEL INTELLIGENCE</span>
+                </div>
+                <h1 class="text-5xl sm:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.1]">
+                    Turn Ground Reality Into Better Decisions.
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl">
+                    We uncover what’s happening across your customer-facing operations and transform real-world observations into actionable insights that drive better business performance.
+                </p>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-16">
+                    <a href="#contact" class="bg-[#00b0fb] hover:bg-[#0092d6] text-white font-bold text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-all shadow-md">
+                        Request an Audit →
+                    </a>
+                    <a href="#services" class="border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-medium text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-colors">
+                        Explore Our Services
+                    </a>
+                </div>
+                <div class="pt-8 border-t border-brand-border">
+                    <p class="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium">
+                        See. Know. Grow.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About GroundOne Section -->
-    <section id="about" class="py-24 bg-slate-50 border-t border-slate-100">
+    <!-- About Section -->
+    <section id="about" class="py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-[#00b0fb] mb-3">About GroundOne</h2>
-                <p class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">Built for precision in physical operations</p>
-                <p class="text-slate-600 text-lg leading-relaxed">
-                    GroundOne bridges the gap between high-level corporate strategy and the physical realities on the shop floor. We provide exhaustive audit trails, rigorous operational tracking, and clear metrics designed to protect your brand standards and optimize execution.
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">About GroundOne</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+                        We Make the Ground Reality Visible.
+                    </h3>
+                </div>
+                <div class="lg:col-span-7 space-y-6 text-slate-600 text-base sm:text-lg leading-relaxed bg-slate-50 p-8 sm:p-10 rounded-2xl border border-brand-border shadow-xs">
+                    <p class="text-slate-900 font-medium text-xl">
+                        As businesses grow, maintaining a consistent customer experience across every outlet becomes increasingly difficult.
+                    </p>
+                    <p>
+                        GroundOne helps businesses see what is really happening on the ground — beyond reports, assumptions, and occasional visits.
+                    </p>
+                    <p>
+                        Through independent mystery shopping, outlet audits, and customer experience evaluations, we capture real-world observations and turn them into clear, actionable intelligence.
+                    </p>
+                    <div class="pt-6 border-t border-brand-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <p class="text-slate-500 text-sm">
+                            Our goal is simple: help businesses see better, know more, and grow smarter.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Our Services</h2>
+                <h3 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    See Your Business Through a Different Lens.
+                </h3>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    We turn real-world observations into clear intelligence that helps businesses improve customer experience, strengthen operations, and maintain consistency across every outlet.
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-[#00b0fb] font-bold text-xl mb-6">01</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Independent Auditing</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Unbiased, granular reporting on store setups, visual merchandising, pricing discipline, and staff compliance.</p>
+
+            <!-- Detailed Services Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service 01: EXPERIENCE -->
+                <div class="border border-brand-border bg-white p-8 sm:p-10 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-[#00b0fb] bg-sky-50 px-3 py-1 rounded-md border border-sky-100">EXPERIENCE</span>
+                            <span class="text-xs font-mono text-slate-400">01</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-3">Mystery Shopping</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Experience your business through the eyes of a real customer. Our mystery shoppers visit your outlets as genuine customers and evaluate the complete experience — from arrival and staff interaction to service, product presentation, upselling, billing, and farewell.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="users" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Customer service & staff behaviour</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="package" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Product & service experience</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Upselling & product knowledge</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Outlet ambience</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="receipt" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Billing & checkout</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="smile" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Overall customer experience</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-border bg-slate-50/60 -mx-8 -mb-8 p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A clear, evidence-backed view of what your customers actually experience.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-[#00b0fb] font-bold text-xl mb-6">02</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">The Ground Score™</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">A standardized benchmark index evaluating retail performance across critical operational vectors to track continuous improvement.</p>
+
+                <!-- Service 02: EXECUTION -->
+                <div class="border border-brand-border bg-white p-8 sm:p-10 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">EXECUTION</span>
+                            <span class="text-xs font-mono text-slate-400">02</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-3">Outlet Audits</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Know whether every outlet is meeting your standards. We evaluate your outlets against defined operational, brand, hygiene, and service standards to identify inconsistencies and gaps.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Brand & visual standards</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="user-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Staff grooming & uniform</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Hygiene & cleanliness</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="sliders" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Operational procedures & SOPs</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="store" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Product display & presentation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-border bg-slate-50/60 -mx-8 -mb-8 p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A structured view of where your outlets are performing — and where they need attention.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm">
-                    <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-[#00b0fb] font-bold text-xl mb-6">03</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Actionable Intelligence</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Turning raw physical metrics into structural modifications that resolve leakage, inconsistency, and operational lag.</p>
+
+                <!-- Service 03: INSIGHT -->
+                <div class="border border-brand-border bg-white p-8 sm:p-10 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-md border border-indigo-100">INSIGHT</span>
+                            <span class="text-xs font-mono text-slate-400">03</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-slate-900 mb-3">Customer Experience</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Understand the moments that shape customer perception. We assess the customer journey to uncover service gaps, friction points, inconsistencies, and opportunities to create a better experience.
+                        </p>
+                        <div class="space-y-3 mb-8">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">We look at:</p>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="git-commit" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Customer journey & touchpoints</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="activity" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Service quality & consistency</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="alert-circle" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Friction points & customer pain points</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="bar-chart-2" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Satisfaction & improvement areas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-brand-border bg-slate-50/60 -mx-8 -mb-8 p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> Actionable insights that help turn better experiences into stronger customer relationships.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services / Solutions Section -->
-    <section id="services" class="py-24 bg-white border-t border-slate-100">
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-[#00b0fb] mb-3">Core Offerings</h2>
-                <p class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Structured metrics for multi-location businesses</p>
+            <div class="max-w-2xl mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">How It Works</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                    From the Ground to Clear Action.
+                </h3>
+                <p class="text-slate-600 text-base">
+                    We make it simple to understand what’s happening across your customer-facing operations.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Retail & Outlet Audits</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Systematic evaluations measuring cleanliness, display standards, stock availability, and service compliance across dispersed operational footprints.</p>
+
+            <!-- Horizontal Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-20">
+                <!-- Step 01 -->
+                <div class="border border-brand-border bg-slate-50/50 p-6 rounded-xl relative flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6">
+                            <i data-lucide="target" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">01</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Define</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            We align on your outlets, objectives, evaluation areas, and the standards you want us to assess.
+                        </p>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-mono uppercase tracking-wider pt-4 border-t border-brand-border">
+                        Objectives Setup
+                    </div>
                 </div>
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Process Verification</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Rigorous checks ensuring execution guidelines, promotional rollouts, and procedural protocols are strictly deployed across all locations.</p>
+
+                <!-- Step 02 -->
+                <div class="border border-brand-border bg-slate-50/50 p-6 rounded-xl relative flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">02</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Visit</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            A trained GroundOne evaluator visits as a genuine customer or independent auditor, depending on the assignment.
+                        </p>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-mono uppercase tracking-wider pt-4 border-t border-brand-border">
+                        On-Site Audit
+                    </div>
+                </div>
+
+                <!-- Step 03 -->
+                <div class="border border-brand-border bg-slate-50/50 p-6 rounded-xl relative flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">03</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Evaluate</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Using a structured evaluation framework, we assess everything from customer service and staff behaviour to outlet standards, hygiene, operations, and billing.
+                        </p>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-mono uppercase tracking-wider pt-4 border-t border-brand-border">
+                        Standard Check
+                    </div>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="border border-brand-border bg-slate-50/50 p-6 rounded-xl relative flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6">
+                            <i data-lucide="camera" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">04</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Capture</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Relevant observations are supported with photographs, receipts, timestamps, and other appropriate evidence.
+                        </p>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-mono uppercase tracking-wider pt-4 border-t border-brand-border">
+                        Evidence Logging
+                    </div>
+                </div>
+
+                <!-- Step 05 -->
+                <div class="border border-brand-border bg-slate-50/50 p-6 rounded-xl relative flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6">
+                            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">05</div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-2">Report</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            We turn observations into a clear report highlighting performance, key issues, strengths, opportunities, and recommended actions.
+                        </p>
+                    </div>
+                    <div class="text-[11px] text-slate-400 font-mono uppercase tracking-wider pt-4 border-t border-brand-border">
+                        Actionable Data
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Banner inside How It Works -->
+            <div class="border border-sky-100 bg-sky-50/50 rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto shadow-sm">
+                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
+                    You can’t be everywhere.
+                </h3>
+                <p class="text-[#00b0fb] font-mono text-sm tracking-wider uppercase mb-8 font-semibold">
+                    But you can know what’s happening.
+                </p>
+                <a href="#contact" class="inline-block bg-[#00b0fb] hover:bg-[#0092d6] text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all shadow-sm">
+                    Request an Audit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why GroundOne Section -->
+    <section id="why-groundone" class="py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Why GroundOne?</h2>
+                <h3 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    More than audits. We deliver business visibility.
+                </h3>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                    GroundOne turns on-ground activity into clear insights, focused action, and measurable improvement — so businesses know not just what happened, but what matters and what to do next.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Feature 1 -->
+                <div class="border border-brand-border bg-white p-8 rounded-2xl shadow-xs">
+                    <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6 font-mono font-bold">
+                        ◉
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Built Around Your Decisions</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We start with the business question, not a standard questionnaire. Every audit is designed around the decisions you need to make.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="border border-brand-border bg-white p-8 rounded-2xl shadow-xs">
+                    <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6 font-mono font-bold">
+                        ◈
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Insights, Not Information</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Forget lengthy spreadsheets and endless reports. GroundOne highlights the gaps, opportunities, and priorities that deserve your attention.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="border border-brand-border bg-white p-8 rounded-2xl shadow-xs">
+                    <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6 font-mono font-bold">
+                        ◎
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Measure What Matters</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our Ground Score™ turns on-ground performance into a simple, measurable view — helping you compare locations, identify weak points, and track progress.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="border border-brand-border bg-white p-8 rounded-2xl shadow-xs">
+                    <div class="w-10 h-10 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-6 font-mono font-bold">
+                        ✓
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">From Finding Problems to Fixing Them</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We don't stop at identifying issues. GroundOne helps track corrective action and verify whether things actually improved.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats / Highlights Bar -->
+            <div class="bg-white border border-brand-border rounded-2xl p-8 sm:p-10 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
+                <div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-1">See what’s happening. Know what matters.</h4>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest font-mono">Act with confidence.</p>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <div class="text-center md:text-right">
+                        <div class="text-2xl sm:text-3xl font-bold text-slate-900 font-mono">100%</div>
+                        <div class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Independent Audits</div>
+                    </div>
+                    <div class="h-8 w-px bg-slate-200"></div>
+                    <div class="text-center md:text-right">
+                        <div class="text-2xl sm:text-3xl font-bold text-[#00b0fb] font-mono">Real-Time</div>
+                        <div class="text-[11px] text-slate-500 uppercase tracking-wider font-medium">Evidence & Reports</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Vision / Roadmap Section (Placed near the ending side) -->
-    <section class="py-20 bg-slate-900 text-white">
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-24 border-b border-brand-border bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Get in Touch</h2>
+                        <h3 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                            Have a question...?
+                        </h3>
+                        <p class="text-[#00b0fb] font-mono text-sm uppercase tracking-wider mb-6 font-semibold">
+                            Let’s make things clearer.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed mb-8">
+                            Reach out to the GroundOne team and discover how better on-ground insights can lead to better business decisions.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-brand-border">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Direct Email</span>
+                            <a href="mailto:hello@groundone.in" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-lg">
+                                hello@groundone.in
+                            </a>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Phone / WhatsApp</span>
+                            <a href="tel:+919939874449" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-lg">
+                                +91 9939874449
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Card Form (Wired to Formspree) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-2xl shadow-xl relative">
+                        <form action="https://formspree.io/f/mwlkrelk" method="POST" class="space-y-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="name">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="email">Work Email</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="name@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="company">Company</label>
+                                <input type="text" id="company" name="company" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Company Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none" placeholder="How can we help your operations?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#00b0fb] hover:bg-[#0092d6] text-white font-bold text-xs uppercase tracking-wider py-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                <span>Send Message</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                            <p class="text-xs text-slate-400 font-mono">
+                                We usually respond within 24 hours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Capabilities Banner (Placed near the ending side, right before footer) -->
+    <section class="py-20 bg-slate-900 text-white border-b border-brand-border">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h3 class="text-xs font-bold uppercase tracking-widest text-[#00b0fb] mb-3">Future Outlook</h3>
-            <p class="text-2xl md:text-3xl font-bold tracking-tight mb-6">
+            <h4 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 font-mono">Future Outlook</h4>
+            <p class="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
                 More intelligence. More possibilities.
             </p>
-            <p class="text-slate-300 text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
                 As GroundOne grows, our capabilities will expand into areas such as Customer Insights, Competitor Intelligence, Consumer Feedback, and Performance Benchmarking.
             </p>
-            <div class="inline-block border-t border-slate-800 pt-6">
-                <p class="text-sm font-semibold tracking-wide text-slate-400">
+            <div class="pt-6 border-t border-slate-800">
+                <p class="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold">
                     Today, we help you see the ground. Tomorrow, we help you understand it.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-24 bg-slate-50 border-t border-slate-100">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-[#00b0fb] mb-3">Get in Touch</h2>
-                <p class="text-3xl font-extrabold text-slate-900 tracking-tight">Ready to audit your physical operations?</p>
-                <p class="text-slate-600 text-sm mt-2">Submit your details below and our team will get back to you promptly.</p>
-            </div>
-            
-            <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-sm">
-                <form action="https://formspree.io/f/mwlkrelk" method="POST" class="space-y-6">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name</label>
-                        <input type="text" name="name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Ansh Garg">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Business Email</label>
-                        <input type="email" name="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="hello@groundone.in">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Message</label>
-                        <textarea name="message" rows="4" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Tell us about your auditing requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-[#00b0fb] hover:bg-[#0092d6] text-white font-semibold py-3.5 rounded-xl shadow-md transition-all">
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-slate-500">
-            <div class="font-bold tracking-tight text-slate-900">
-                GROUND<span class="text-[#00b0fb]">ONE</span>
+    <footer class="py-12 bg-white border-t border-brand-border text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="h-6 w-auto flex items-center">
+                    <img src="final groundone logo.jpg" alt="GroundOne Logo" class="h-6 w-auto rounded object-contain">
+                </div>
+                <span class="text-slate-400">© 2026. All rights reserved.</span>
             </div>
-            <p>&copy; 2026 GroundOne. All rights reserved.</p>
+            <div class="flex items-center space-x-6 font-medium text-slate-600">
+                <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
+                <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
+                <a href="#how-it-works" class="hover:text-[#00b0fb] transition-colors">How It Works</a>
+                <a href="#why-groundone" class="hover:text-[#00b0fb] transition-colors">Why GroundOne</a>
+                <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
