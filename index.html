@@ -24,12 +24,6 @@
                             border: '#e2e8f0',
                             accent: '#00b0fb'
                         }
-                    },
-                    fontSize: {
-                        '7xl': ['4.5rem', { lineHeight: '1' }],
-                        '5xl': ['3rem', { lineHeight: '1.1' }],
-                        '4xl': ['2.25rem', { lineHeight: '1.2' }],
-                        '2.5xl': ['1.625rem', { lineHeight: '1.4' }],
                     }
                 }
             }
@@ -52,15 +46,9 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-border shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-2 sm:space-x-3 group">
-                <div class="h-8 sm:h-10 flex items-center">
-                    <!-- Exact Logo embedded as SVG for perfect pixel-for-pixel rendering -->
-                    <svg class="h-8 sm:h-10 w-auto" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M85.5 42C77.5 30.5 64 24 50 24C27.5 24 10 42.5 10 65C10 87.5 27.5 106 50 106C70.5 106 87.5 92.5 93.5 74" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
-                        <path d="M50 65L76 91" stroke="#00b0fb" stroke-width="12" stroke-linecap="round"/>
-                        <path d="M50 65L76 91L105 120" stroke="#00b0fb" stroke-width="12" stroke-linecap="round"/>
-                        <text x="132" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#0f172a" letter-spacing="-0.8">Ground</text>
-                        <text x="315" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#00b0fb" letter-spacing="-0.8">One</text>
-                    </svg>
+                <div class="h-9 sm:h-11 flex items-center">
+                    <!-- Embedded exact uploaded logo image file directly -->
+                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-9 sm:h-11 w-auto object-contain">
                 </div>
             </a>
             
@@ -116,11 +104,10 @@
         </div>
     </section>
 
-    <!-- Upgraded Layout: About GroundOne Section (Cleaner, Professional, No Logos) -->
+    <!-- About GroundOne Section (Upgraded layout, no icons/logos inside) -->
     <section id="about" class="py-16 sm:py-28 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- Left Column: Content -->
                 <div class="space-y-8">
                     <div>
                         <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">About GroundOne</h2>
@@ -144,7 +131,6 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Visual Accent (Abstract Grid Layout without logos/icons) -->
                 <div class="relative h-full min-h-[400px] hidden lg:block">
                     <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4 p-8 opacity-50">
                         <div class="col-span-2 row-span-2 bg-sky-50 rounded-3xl shadow-inner flex items-center justify-center"><div class="w-12 h-12 bg-sky-100 rounded-full"></div></div>
@@ -608,12 +594,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <div class="h-6 flex items-center">
-                    <svg class="h-6 w-auto" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M85.5 42C77.5 30.5 64 24 50 24C27.5 24 10 42.5 10 65C10 87.5 27.5 106 50 106C70.5 106 87.5 92.5 93.5 74" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
-                        <path d="M50 65L76 91" stroke="#00b0fb" stroke-width="12" stroke-linecap="round"/>
-                        <text x="132" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#0f172a">Ground</text>
-                        <text x="315" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#00b0fb">One</text>
-                    </svg>
+                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-6 w-auto object-contain">
                 </div>
                 <span class="text-slate-400 text-xs">© 2026 GroundOne. All rights reserved.</span>
             </div>
