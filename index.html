@@ -53,7 +53,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-2 sm:space-x-3 group">
                 <div class="h-8 sm:h-10 flex items-center">
-                    <!-- Exact Logo embedded as SVG for perfect rendering -->
+                    <!-- Exact Logo embedded as SVG for perfect pixel-for-pixel rendering -->
                     <svg class="h-8 sm:h-10 w-auto" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M85.5 42C77.5 30.5 64 24 50 24C27.5 24 10 42.5 10 65C10 87.5 27.5 106 50 106C70.5 106 87.5 92.5 93.5 74" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
                         <path d="M50 65L76 91" stroke="#00b0fb" stroke-width="12" stroke-linecap="round"/>
@@ -116,7 +116,7 @@
         </div>
     </section>
 
-    <!-- New Layout: About GroundOne Section (Cleaner, Professional, No Logos) -->
+    <!-- Upgraded Layout: About GroundOne Section (Cleaner, Professional, No Logos) -->
     <section id="about" class="py-16 sm:py-28 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -144,10 +144,9 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Visual Accent (Abstract Grid/Connection representation without specific icons) -->
+                <!-- Right Column: Visual Accent (Abstract Grid Layout without logos/icons) -->
                 <div class="relative h-full min-h-[400px] hidden lg:block">
                     <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4 p-8 opacity-50">
-                        <!-- Decorative interconnected squares/points -->
                         <div class="col-span-2 row-span-2 bg-sky-50 rounded-3xl shadow-inner flex items-center justify-center"><div class="w-12 h-12 bg-sky-100 rounded-full"></div></div>
                         <div class="col-span-3 col-start-3 row-span-3 bg-white border border-brand-border rounded-[2rem] shadow-lg p-6 flex flex-col justify-between">
                             <div class="w-full h-4 bg-slate-100 rounded-full"></div>
@@ -164,14 +163,13 @@
                         </div>
                         <div class="col-span-3 col-start-4 row-span-2 row-start-5 bg-sky-50/50 rounded-2xl border border-sky-100 flex items-center justify-center text-xs font-mono font-medium text-[#00b0fb] tracking-wider">GROUND DATA FLOW</div>
                     </div>
-                    <!-- Overlay for depth -->
                     <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/50 to-white"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Services Section (Original detailed format as requested) -->
+    <!-- Our Services Section -->
     <section id="services" class="py-16 sm:py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-3xl mb-12 sm:mb-16">
@@ -206,4 +204,435 @@
                                     <span>Customer service & staff behaviour</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
-                                    <i data
+                                    <i data-lucide="package" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Product & service experience</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="trending-up" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Upselling & product knowledge</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Outlet ambience</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="receipt" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Billing & checkout</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="smile" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
+                                    <span>Overall customer experience</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 sm:pt-6 border-t border-brand-border bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A clear, evidence-backed view of what your customers actually experience.</p>
+                    </div>
+                </div>
+
+                <!-- Service 02: Outlet Audits -->
+                <div class="border border-brand-border bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">EXECUTION</span>
+                            <span class="text-xs font-mono text-slate-400">02</span>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Outlet Audits</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Know whether every outlet is meeting your standards. We evaluate your outlets against defined operational, brand, hygiene, and service standards to identify inconsistencies and gaps.
+                        </p>
+
+                        <div class="space-y-3 mb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Brand & visual standards</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="user-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Staff grooming & uniform</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Hygiene & cleanliness</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="sliders" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Operational procedures & SOPs</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="store" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                                    <span>Product display & presentation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 sm:pt-6 border-t border-brand-border bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A structured view of where your outlets are performing — and where they need attention.</p>
+                    </div>
+                </div>
+
+                <!-- Service 03: Customer Experience -->
+                <div class="border border-brand-border bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-md border border-indigo-100">INSIGHT</span>
+                            <span class="text-xs font-mono text-slate-400">03</span>
+                        </div>
+                        <h4 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Customer Experience</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Understand the moments that shape customer perception. We assess the customer journey to uncover service gaps, friction points, inconsistencies, and opportunities to create a better experience.
+                        </p>
+
+                        <div class="space-y-3 mb-6">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">We look at:</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="git-commit" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Customer journey & touchpoints</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="activity" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Service quality & consistency</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="alert-circle" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Friction points & customer pain points</span>
+                                </li>
+                                <li class="flex items-center space-x-2.5">
+                                    <i data-lucide="bar-chart-2" class="w-4 h-4 text-indigo-600 shrink-0"></i>
+                                    <span>Satisfaction & improvement areas</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-4 sm:pt-6 border-t border-brand-border bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
+                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> Actionable insights that help turn better experiences into stronger customer relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="max-w-2xl mb-12 sm:mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">How It Works</h2>
+                <h3 class="text-2.5xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                    From the Ground to Clear Action.
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    We make it simple to understand what’s happening across your customer-facing operations.
+                </p>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
+                            <i data-lucide="target" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">01 — Define</div>
+                        <h4 class="text-base font-bold text-slate-900 mb-2">Objectives Setup</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            We align on your outlets, objectives, evaluation areas, and the standards you want us to assess.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">02 — Visit</div>
+                        <h4 class="text-base font-bold text-slate-900 mb-2">On-Site Audit</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            A trained GroundOne evaluator visits as a genuine customer or independent auditor, depending on the assignment.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
+                            <i data-lucide="search" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">03 — Evaluate</div>
+                        <h4 class="text-base font-bold text-slate-900 mb-2">Standard Check</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Using a structured evaluation framework, we assess everything from customer service and staff behaviour to outlet standards, hygiene, operations, and billing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
+                            <i data-lucide="camera" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">04 — Capture</div>
+                        <h4 class="text-base font-bold text-slate-900 mb-2">Evidence Logging</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Relevant observations are supported with photographs, receipts, timestamps, and other appropriate evidence.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                        </div>
+                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">05 — Report</div>
+                        <h4 class="text-base font-bold text-slate-900 mb-2">Actionable Data</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            We turn observations into a clear report highlighting performance, key issues, strengths, opportunities, and recommended actions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-16 sm:py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mb-12 sm:mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Industries</h2>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
+                    Built for Customer-Facing Businesses.
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    GroundOne can help businesses where customer experience, operational consistency, and on-ground execution matter.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Restaurants & Cafés</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Retail</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Education & Coaching</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Salons & Beauty</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Gyms & Fitness</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Healthcare & Diagnostics</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Automotive</span>
+                </div>
+                <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
+                    <span class="font-semibold text-slate-800 text-sm sm:text-base">Multi-Location Businesses</span>
+                </div>
+            </div>
+
+            <div class="bg-sky-50/70 border border-sky-100 rounded-xl p-5 sm:p-6 text-slate-700 text-sm">
+                <p><strong class="text-slate-900 font-semibold">For Education & Coaching:</strong> This can include coaching institutes and training businesses serving adult students and young professionals (18+).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why GroundOne Section -->
+    <section id="why-groundone" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mb-12 sm:mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Why GroundOne?</h2>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                    More Than Audits. We Deliver Business Visibility.
+                </h3>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    GroundOne turns on-ground activity into clear insights, focused action, and measurable improvement — so businesses know not just what happened, but what matters and what to do next.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+                <div class="border border-brand-border bg-slate-50/50 p-6 sm:p-8 rounded-2xl shadow-xs">
+                    <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">◉</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Built Around Your Decisions</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Every evaluation is designed around what you need to know.
+                    </p>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-6 sm:p-8 rounded-2xl shadow-xs">
+                    <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">◈</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Insights, Not Information</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We highlight the issues and opportunities that actually deserve attention.
+                    </p>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-6 sm:p-8 rounded-2xl shadow-xs">
+                    <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">◎</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Measure What Matters</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our Ground Score™ turns on-ground performance into a simple, measurable view.
+                    </p>
+                </div>
+
+                <div class="border border-brand-border bg-slate-50/50 p-6 sm:p-8 rounded-2xl shadow-xs">
+                    <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">✓</div>
+                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">From Findings to Improvement</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We help identify what needs fixing and track whether things improve.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visibility Statement Banner -->
+            <div class="bg-slate-900 text-white border border-slate-800 rounded-2xl p-8 sm:p-12 shadow-md flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+                <div class="space-y-2">
+                    <h4 class="text-2xl sm:text-3xl font-bold tracking-tight">
+                        See what’s happening.<br>
+                        Know what matters.<br>
+                        <span class="text-[#00b0fb]">Act with confidence.</span>
+                    </h4>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <div class="text-center md:text-right">
+                        <div class="text-3xl sm:text-4xl font-bold text-white font-mono">100%</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-medium">Independent Audits</div>
+                    </div>
+                    <div class="h-10 w-px bg-slate-800"></div>
+                    <div class="text-center md:text-right">
+                        <div class="text-2xl sm:text-3xl font-bold text-[#00b0fb] font-mono">Real-Time</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-medium">Evidence & Reports</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner -->
+    <section class="py-16 sm:py-20 bg-sky-50/50 border-b border-brand-border text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <h3 class="text-2.5xl sm:text-4xl font-bold text-slate-900 mb-2">
+                You Can’t Be Everywhere.
+            </h3>
+            <p class="text-[#00b0fb] font-mono text-xs sm:text-sm tracking-wider uppercase mb-8 font-semibold">
+                But You Can Know What’s Happening.
+            </p>
+            <a href="#contact" class="inline-block cta-gradient text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all shadow-sm">
+                Request an Audit →
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+                <!-- Left Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Contact</h2>
+                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-2">
+                            Let’s Make Things Clearer.
+                        </h3>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                            Reach out to the GroundOne team and discover how better on-ground insights can lead to better business decisions.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-brand-border">
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Direct Email</span>
+                            <a href="mailto:hello@groundone.in" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-base sm:text-lg">
+                                hello@groundone.in
+                            </a>
+                        </div>
+                        <div>
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Phone / WhatsApp</span>
+                            <a href="tel:+919939874449" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-base sm:text-lg">
+                                +91 9939874449
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form (Wired to Formspree) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-900 text-white p-6 sm:p-10 rounded-2xl shadow-xl relative">
+                        <form action="https://formspree.io/f/mwlkrelk" method="POST" class="space-y-4 sm:space-y-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="name">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="phone">Phone No.</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="+91 XXXXX XXXXX">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="email">Work Email</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="name@company.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="company">Company</label>
+                                <input type="text" id="company" name="company" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Company Name">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none" placeholder="How can we help your operations?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full cta-gradient text-white font-bold text-xs uppercase tracking-wider py-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                                <span>Send Message</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                        <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+                            <p class="text-xs text-slate-400 font-mono">
+                                We usually respond within 24 hours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-brand-border text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                <div class="h-6 flex items-center">
+                    <svg class="h-6 w-auto" viewBox="0 0 460 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M85.5 42C77.5 30.5 64 24 50 24C27.5 24 10 42.5 10 65C10 87.5 27.5 106 50 106C70.5 106 87.5 92.5 93.5 74" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+                        <path d="M50 65L76 91" stroke="#00b0fb" stroke-width="12" stroke-linecap="round"/>
+                        <text x="132" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#0f172a">Ground</text>
+                        <text x="315" y="82" font-family="'Outfit', sans-serif" font-weight="700" font-size="56" fill="#00b0fb">One</text>
+                    </svg>
+                </div>
+                <span class="text-slate-400 text-xs">© 2026 GroundOne. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6 font-medium text-xs text-slate-600">
+                <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
+                <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
+                <a href="#how-it-works" class="hover:text-[#00b0fb] transition-colors">How It Works</a>
+                <a href="#why-groundone" class="hover:text-[#00b0fb] transition-colors">Why GroundOne</a>
+                <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
+            </div>
+            <div class="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium">
+                See. Know. Grow.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
