@@ -49,7 +49,6 @@
         .btn-gradient:hover {
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
         }
-        /* Human coded editorial grid feel */
         .editorial-grid {
             background-image: linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
@@ -61,18 +60,17 @@
 
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
-        <!-- Added a clear gap constraint and flex spacing for mobile view -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-            <a href="#" class="flex items-center space-x-2.5 group shrink-0">
-                <div class="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center bg-white border border-slate-200 rounded-xl p-1 shadow-2xs">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 h-20 flex items-center justify-between gap-2 sm:gap-4">
+            <a href="#" class="flex items-center space-x-2 group shrink-0">
+                <div class="h-9 w-9 sm:h-12 sm:w-12 flex items-center justify-center bg-white border border-slate-200 rounded-xl p-1 shadow-2xs">
                     <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
                 </div>
                 <div class="flex items-center tracking-tight select-none">
-                    <span class="text-lg sm:text-2xl font-bold text-slate-900">Ground</span><span class="text-lg sm:text-2xl font-normal text-[#00b0fb]">One</span>
+                    <span class="text-base sm:text-2xl font-bold text-slate-900">Ground</span><span class="text-base sm:text-2xl font-normal text-[#00b0fb]">One</span>
                 </div>
             </a>
             
-            <div class="flex items-center space-x-3 sm:space-x-8 ml-auto shrink-0">
+            <div class="flex items-center space-x-2 sm:space-x-8 ml-auto shrink-0">
                 <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                     <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
                     <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
@@ -81,11 +79,10 @@
                     <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
                 </nav>
 
-                <!-- Mobile Dropdown Menu with robust padding/gap -->
+                <!-- Mobile Dropdown Menu (Word "Menu" removed for spaciousness) -->
                 <div class="relative lg:hidden">
-                    <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold px-4 py-2.5 rounded-xl transition-colors border border-slate-200">
-                        <i data-lucide="menu" class="w-4 h-4 text-[#00b0fb]"></i>
-                        <span>Menu</span>
+                    <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 rounded-xl transition-colors border border-slate-200" aria-label="Toggle Menu">
+                        <i data-lucide="menu" class="w-5 h-5 text-[#00b0fb]"></i>
                     </button>
                     <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-50">
                         <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">About</a>
@@ -96,8 +93,8 @@
                     </div>
                 </div>
 
-                <div class="flex items-center space-x-3">
-                    <a href="#contact" class="btn-gradient text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-6 py-2.5 rounded-full transition-all">
+                <div class="flex items-center">
+                    <a href="#contact" class="btn-gradient text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
                         Request an Audit →
                     </a>
                 </div>
@@ -142,7 +139,7 @@
         </div>
     </section>
 
-    <!-- About GroundOne Section (New Professional Human Layout Structure) -->
+    <!-- About GroundOne Section -->
     <section id="about" class="py-20 sm:py-28 border-b border-slate-200 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -505,7 +502,7 @@
                 </div>
             </div>
 
-            <!-- Redesigned 'See What's Happening' Part (Human-Coded Editorial Style with Refined Palette Mix) -->
+            <!-- Redesigned 'See What's Happening' Part -->
             <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white border border-slate-800 rounded-3xl p-8 sm:p-14 shadow-xl relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00b0fb]/10 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="absolute -left-10 -top-10 w-60 h-60 bg-[#cdffd8]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -604,7 +601,7 @@
         </div>
     </section>
 
-    <!-- Footer (Clean minimal footer with no navigation link clutter) -->
+    <!-- Footer -->
     <footer class="py-10 bg-white border-t border-slate-200 text-sm text-slate-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div class="flex items-center space-x-3">
