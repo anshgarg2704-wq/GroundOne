@@ -42,16 +42,22 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     <style>
-        .btn-gradient {
-            background: linear-gradient(135deg, #00b0fb 0%, #0284c7 100%);
-            box-shadow: 0 10px 25px -5px rgba(0, 176, 251, 0.3);
+        /* Lighter, vibrant palette mix gradient for Request an Audit buttons */
+        .btn-palette-light {
+            background: linear-gradient(135deg, #cdffd8 0%, #a2f9c4 30%, #70e1f5 70%, #ffd1ff 100%);
+            background-size: 200% 200%;
+            color: #0f172a;
+            box-shadow: 0 8px 20px -4px rgba(112, 225, 245, 0.35);
+            transition: all 0.3s ease;
         }
-        .btn-gradient:hover {
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        .btn-palette-light:hover {
+            background-position: right center;
+            box-shadow: 0 12px 25px -4px rgba(205, 255, 216, 0.6);
+            transform: translateY(-1px);
         }
         .editorial-grid {
-            background-image: linear-gradient(to right, rgba(226, 232, 240, 0.4) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(226, 232, 240, 0.4) 1px, transparent 1px);
+            background-image: linear-gradient(to right, rgba(226, 232, 240, 0.3) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(226, 232, 240, 0.3) 1px, transparent 1px);
             background-size: 40px 40px;
         }
     </style>
@@ -79,7 +85,7 @@
                     <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
                 </nav>
 
-                <!-- Mobile Dropdown Menu (Word "Menu" removed for spaciousness) -->
+                <!-- Mobile Dropdown Menu -->
                 <div class="relative lg:hidden">
                     <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 rounded-xl transition-colors border border-slate-200" aria-label="Toggle Menu">
                         <i data-lucide="menu" class="w-5 h-5 text-[#00b0fb]"></i>
@@ -94,7 +100,7 @@
                 </div>
 
                 <div class="flex items-center">
-                    <a href="#contact" class="btn-gradient text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
+                    <a href="#contact" class="btn-palette-light text-slate-900 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
                         Request an Audit →
                     </a>
                 </div>
@@ -103,7 +109,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden bg-gradient-to-b from-[#cdffd8]/30 via-white to-white border-b border-slate-200 editorial-grid">
+    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden bg-gradient-to-b from-[#cdffd8]/25 via-white to-white border-b border-slate-200 editorial-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
             <div class="max-w-3xl space-y-6">
                 <div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-mono font-medium tracking-widest text-slate-600 uppercase bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-2xs">
@@ -120,7 +126,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
-                    <a href="#contact" class="btn-gradient text-white font-bold text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-all flex items-center justify-center space-x-3 shadow-md">
+                    <a href="#contact" class="btn-palette-light text-slate-900 font-bold text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-all flex items-center justify-center space-x-3 shadow-md">
                         <span>Request an Audit</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -130,16 +136,18 @@
                     </a>
                 </div>
 
-                <div class="pt-10 border-t border-slate-200 mt-12">
-                    <p class="text-xs uppercase tracking-widest text-slate-500 font-mono font-medium">
-                        See. Know. Grow.
-                    </p>
+                <div class="pt-10 border-t border-slate-200 mt-12 flex items-center space-x-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-7 h-7 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">G1</div>
+                        <div class="w-7 h-7 rounded-full bg-[#cdffd8] border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-900">✓</div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Trusted by multi-outlet retail, dining, and service teams.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About GroundOne Section -->
+    <!-- About GroundOne Section (More Human, Warm, & Professional) -->
     <section id="about" class="py-20 sm:py-28 border-b border-slate-200 bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -158,19 +166,19 @@
 
                     <div class="border-l-2 border-[#00b0fb] pl-6 py-2 space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
                         <p class="font-semibold text-slate-900 text-lg">
-                            As businesses grow, maintaining a consistent customer experience across every outlet becomes increasingly difficult.
+                            As your business grows, keeping eyes on every single outlet becomes an uphill battle. 
                         </p>
                         <p>
-                            GroundOne helps businesses see what is really happening on the ground beyond reports, assumptions, and occasional visits.
+                            That is why we stepped in. GroundOne gives founders and operators a clear, unfiltered look at what is happening on the ground—cutting through polished spreadsheets and assumptions.
                         </p>
                         <p>
-                            Through independent mystery shopping, outlet audits, and customer experience evaluations, we capture real-world observations and turn them into clear, actionable intelligence.
+                            Through careful independent mystery shopping and site audits, we gather real proof so you can fix gaps before they affect your bottom line.
                         </p>
                     </div>
 
                     <div class="pt-2">
                         <div class="inline-block bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-sm">
-                            <p class="text-xs font-mono tracking-widest uppercase text-slate-400 mb-1">Our Core Mission</p>
+                            <p class="text-xs font-mono tracking-widest uppercase text-slate-400 mb-1">Our Human Philosophy</p>
                             <p class="font-bold text-sm sm:text-base">Help businesses see better, know more, and grow smarter.</p>
                         </div>
                     </div>
@@ -180,9 +188,9 @@
                 <div class="lg:col-span-6 space-y-4">
                     <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-[#00b0fb] uppercase tracking-wider">Metric 01</span>
+                            <span class="text-xs font-mono text-[#00b0fb] uppercase tracking-wider">Perspective 01</span>
                             <h4 class="text-2xl font-bold text-slate-900">100% Independent Audits</h4>
-                            <p class="text-xs text-slate-600">Unbiased, objective evaluations from genuine perspectives.</p>
+                            <p class="text-xs text-slate-600">Evaluations done by real people experiencing your brand firsthand.</p>
                         </div>
                         <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
                             <i data-lucide="shield-check" class="w-6 h-6 text-[#00b0fb]"></i>
@@ -191,9 +199,9 @@
 
                     <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-emerald-600 uppercase tracking-wider">Metric 02</span>
+                            <span class="text-xs font-mono text-emerald-600 uppercase tracking-wider">Perspective 02</span>
                             <h4 class="text-2xl font-bold text-slate-900">Real-Time Evidence</h4>
-                            <p class="text-xs text-slate-600">Photographs, receipts, and detailed audit timestamps.</p>
+                            <p class="text-xs text-slate-600">Authentic photographs, timestamps, and genuine customer feedback.</p>
                         </div>
                         <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
                             <i data-lucide="camera" class="w-6 h-6 text-emerald-600"></i>
@@ -202,9 +210,9 @@
 
                     <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-indigo-600 uppercase tracking-wider">Metric 03</span>
-                            <h4 class="text-2xl font-bold text-slate-900">Actionable Intelligence</h4>
-                            <p class="text-xs text-slate-600">Clear reports highlighting what matters and what to fix first.</p>
+                            <span class="text-xs font-mono text-indigo-600 uppercase tracking-wider">Perspective 03</span>
+                            <h4 class="text-2xl font-bold text-slate-900">Clear Actionable Steps</h4>
+                            <p class="text-xs text-slate-600">No jargon or clutter—just priorities that matter to your daily operations.</p>
                         </div>
                         <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
                             <i data-lucide="trending-up" class="w-6 h-6 text-indigo-600"></i>
@@ -502,7 +510,7 @@
                 </div>
             </div>
 
-            <!-- Redesigned 'See What's Happening' Part -->
+            <!-- Redesigned 'See What's Happening' Part (Using the lighter palette button & warm human tone) -->
             <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white border border-slate-800 rounded-3xl p-8 sm:p-14 shadow-xl relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00b0fb]/10 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="absolute -left-10 -top-10 w-60 h-60 bg-[#cdffd8]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -512,11 +520,11 @@
                         <span class="text-xs font-mono uppercase tracking-widest text-[#cdffd8] font-semibold">The Advantage Is Knowing</span>
                         <h4 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-white">
                             You can't be everywhere.<br>
-                            <span class="text-[#00b0fb]">But you can know what's happening.</span>
+                            <span class="text-[#cdffd8]">But you can know what's happening.</span>
                         </h4>
                     </div>
                     <div class="shrink-0">
-                        <a href="#contact" class="btn-gradient text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all inline-flex items-center space-x-2">
+                        <a href="#contact" class="btn-palette-light text-slate-900 font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all inline-flex items-center space-x-2">
                             <span>Request an audit</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -585,7 +593,7 @@
                                 <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="message">Message</label>
                                 <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none" placeholder="How can we help your operations?"></textarea>
                             </div>
-                            <button type="submit" class="w-full btn-gradient text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center space-x-2">
+                            <button type="submit" class="w-full btn-palette-light text-slate-900 font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center space-x-2">
                                 <span>Send Message</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
