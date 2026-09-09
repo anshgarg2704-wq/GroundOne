@@ -32,7 +32,6 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     <style>
-        /* Vibrant brighter color mix gradient for buttons */
         .cta-gradient-vibrant {
             background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #00b0fb 100%);
             box-shadow: 0 10px 25px -5px rgba(0, 176, 251, 0.4);
@@ -48,10 +47,13 @@
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-border shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <!-- Scaled up larger logo in a clean rectangular container -->
-            <a href="#" class="flex items-center group">
-                <div class="h-12 sm:h-14 w-40 sm:w-48 flex items-center bg-white border border-slate-100 rounded-xl px-3 py-1.5 shadow-2xs overflow-hidden">
-                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-full w-full object-contain object-left">
+            <!-- Navbar Logo: Combining the symbol and the whole word side-by-side -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <div class="h-10 sm:h-12 w-10 sm:w-12 flex items-center justify-center bg-white border border-slate-100 rounded-xl p-1 shadow-2xs shrink-0">
+                    <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
+                </div>
+                <div class="h-8 sm:h-10 w-28 sm:w-36 flex items-center">
+                    <img src="GroundOne heading_4.png" alt="GroundOne Text Heading" class="h-full w-full object-contain object-left">
                 </div>
             </a>
             
@@ -124,7 +126,7 @@
         </div>
     </section>
 
-    <!-- Upgraded About GroundOne Section (Modern Asymmetric Grid Layout, No Logos inside) -->
+    <!-- About GroundOne Section -->
     <section id="about" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -621,11 +623,14 @@
     <!-- Footer -->
     <footer class="py-12 bg-white border-t border-brand-border text-sm text-slate-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <div class="h-10 w-36 flex items-center bg-white border border-slate-100 rounded-xl px-2 py-1 shadow-2xs">
-                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-full w-full object-contain object-left">
+            <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3">
+                <div class="h-8 w-8 flex items-center justify-center bg-white border border-slate-100 rounded-lg p-0.5 shadow-2xs shrink-0">
+                    <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
                 </div>
-                <span class="text-slate-400 text-xs">© 2026 GroundOne. All rights reserved.</span>
+                <div class="h-6 w-28 flex items-center">
+                    <img src="GroundOne heading_4.png" alt="GroundOne Heading" class="h-full w-full object-contain object-left">
+                </div>
+                <span class="text-slate-400 text-xs sm:ml-2">© 2026 GroundOne. All rights reserved.</span>
             </div>
             <div class="flex items-center space-x-6 font-medium text-xs text-slate-600">
                 <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
@@ -646,7 +651,6 @@
             const menu = document.getElementById('mobile-dropdown');
             menu.classList.toggle('hidden');
         }
-        // Close dropdown when clicking outside
         window.addEventListener('click', function(e) {
             const btn = document.getElementById('menu-btn');
             const menu = document.getElementById('mobile-dropdown');
