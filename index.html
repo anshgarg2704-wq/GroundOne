@@ -32,29 +32,31 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     <style>
-        .cta-gradient {
-            background: linear-gradient(135deg, #00b0fb 0%, #0284c7 50%, #0f172a 100%);
+        /* Vibrant brighter color mix gradient for buttons */
+        .cta-gradient-vibrant {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 50%, #00b0fb 100%);
+            box-shadow: 0 10px 25px -5px rgba(0, 176, 251, 0.4);
         }
-        .cta-gradient:hover {
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #020617 100%);
+        .cta-gradient-vibrant:hover {
+            background: linear-gradient(135deg, #00bfff 0%, #2868c7 50%, #0096e6 100%);
+            box-shadow: 0 15px 30px -5px rgba(0, 176, 251, 0.6);
         }
     </style>
 </head>
 <body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-[#00b0fb] selection:text-white">
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-border shadow-xs">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-border shadow-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-2 sm:space-x-3 group">
-                <div class="h-9 sm:h-11 flex items-center">
-                    <picture>
-                        <source srcset="GroundOne white_4.png" type="image/png">
-                        <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-9 sm:h-11 w-auto object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/';">
-                    </picture>
+            <!-- Scaled up larger logo in a clean rectangular container -->
+            <a href="#" class="flex items-center group">
+                <div class="h-12 sm:h-14 w-40 sm:w-48 flex items-center bg-white border border-slate-100 rounded-xl px-3 py-1.5 shadow-2xs overflow-hidden">
+                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-full w-full object-contain object-left">
                 </div>
             </a>
             
             <div class="flex items-center space-x-3 sm:space-x-8 ml-auto">
+                <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                     <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
                     <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
@@ -62,12 +64,28 @@
                     <a href="#industries" class="hover:text-[#00b0fb] transition-colors">Industries</a>
                     <a href="#why-groundone" class="hover:text-[#00b0fb] transition-colors">Why GroundOne</a>
                 </nav>
+
+                <!-- Mobile Dropdown Menu (Umbrella Tab) -->
+                <div class="relative lg:hidden">
+                    <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold px-3.5 py-2 rounded-xl transition-colors border border-slate-200">
+                        <i data-lucide="menu" class="w-4 h-4 text-[#00b0fb]"></i>
+                        <span>Menu</span>
+                    </button>
+                    <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-brand-border rounded-xl shadow-xl py-2 z-50">
+                        <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">About</a>
+                        <a href="#services" onclick="toggleMobileMenu()" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Services</a>
+                        <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">How It Works</a>
+                        <a href="#industries" onclick="toggleMobileMenu()" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Industries</a>
+                        <a href="#why-groundone" onclick="toggleMobileMenu()" class="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Why GroundOne</a>
+                    </div>
+                </div>
+
                 <div class="flex items-center space-x-3">
                     <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 text-xs font-medium uppercase tracking-wider text-slate-700 hover:text-[#00b0fb] border border-brand-border bg-slate-50 px-3.5 py-2 rounded-full transition-colors">
                         <i data-lucide="message-circle" class="w-4 h-4 text-[#00b0fb]"></i>
                         <span>Chat</span>
                     </a>
-                    <a href="#contact" class="cta-gradient text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-6 py-2.5 rounded-full transition-all shadow-sm">
+                    <a href="#contact" class="cta-gradient-vibrant text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider px-4 sm:px-6 py-2.5 rounded-full transition-all">
                         Request an Audit
                     </a>
                 </div>
@@ -89,7 +107,7 @@
                     We uncover what’s happening across your customer-facing operations and transform real-world observations into actionable insights that drive better business performance.
                 </p>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-10 sm:mb-12">
-                    <a href="#contact" class="cta-gradient text-white font-bold text-xs sm:text-sm tracking-wider uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-all shadow-md flex items-center justify-center space-x-2">
+                    <a href="#contact" class="cta-gradient-vibrant text-white font-bold text-xs sm:text-sm tracking-wider uppercase px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-all flex items-center justify-center space-x-2">
                         <span>Request an Audit</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -106,19 +124,19 @@
         </div>
     </section>
 
-    <!-- About GroundOne Section -->
-    <section id="about" class="py-14 sm:py-20 border-b border-brand-border bg-white scroll-mt-20">
+    <!-- Upgraded About GroundOne Section (Modern Asymmetric Grid Layout, No Logos inside) -->
+    <section id="about" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div class="space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 space-y-6">
                     <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">About GroundOne</h2>
-                        <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">About GroundOne</span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
                             We Make the Ground Reality Visible.
-                        </h3>
+                        </h2>
                     </div>
-                    <div class="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed border-l-4 border-sky-100 pl-6 py-1">
-                        <p class="text-lg sm:text-xl font-medium text-slate-900 leading-snug">
+                    <div class="space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed border-l-4 border-sky-400 pl-6 py-2 bg-slate-50/50 rounded-r-2xl">
+                        <p class="text-lg sm:text-xl font-semibold text-slate-900">
                             As businesses grow, maintaining a consistent customer experience across every outlet becomes increasingly difficult.
                         </p>
                         <p>
@@ -127,41 +145,50 @@
                         <p>
                             Through independent mystery shopping, outlet audits, and customer experience evaluations, we capture real-world observations and turn them into clear, actionable intelligence.
                         </p>
-                        <p class="pt-2 text-lg font-semibold text-slate-900 border-t border-sky-50">
-                            Our goal is simple: help businesses see better, know more, and grow smarter.
-                        </p>
+                        <div class="pt-4 border-t border-slate-200">
+                            <p class="text-base sm:text-lg font-bold text-slate-900">
+                                Our goal is simple: help businesses see better, know more, and grow smarter.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="relative h-full min-h-[400px] hidden lg:block">
-                    <div class="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4 p-8 opacity-50">
-                        <div class="col-span-2 row-span-2 bg-sky-50 rounded-3xl shadow-inner flex items-center justify-center"><div class="w-12 h-12 bg-sky-100 rounded-full"></div></div>
-                        <div class="col-span-3 col-start-3 row-span-3 bg-white border border-brand-border rounded-[2rem] shadow-lg p-6 flex flex-col justify-between">
-                            <div class="w-full h-4 bg-slate-100 rounded-full"></div>
-                            <div class="w-3/4 h-4 bg-slate-100 rounded-full"></div>
-                            <div class="w-1/2 h-4 bg-sky-100 rounded-full self-end"></div>
-                        </div>
-                        <div class="col-span-2 col-start-1 row-span-2 row-start-4 bg-white border border-brand-border rounded-3xl shadow p-6">
-                            <div class="w-16 h-3 bg-sky-100 rounded-full mb-4"></div>
-                            <div class="flex space-x-2">
-                                <div class="w-6 h-6 bg-sky-50 rounded-full"></div>
-                                <div class="w-6 h-6 bg-sky-50 rounded-full"></div>
-                                <div class="w-6 h-6 bg-sky-50 rounded-full"></div>
+                <div class="lg:col-span-6">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-sky-500 to-blue-600 text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+                            <i data-lucide="eye" class="w-8 h-8 mb-6 text-sky-200"></i>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1">100%</h4>
+                                <p class="text-xs text-sky-100 uppercase tracking-wider">Independent Visibility</p>
                             </div>
                         </div>
-                        <div class="col-span-3 col-start-4 row-span-2 row-start-5 bg-sky-50/50 rounded-2xl border border-sky-100 flex items-center justify-center text-xs font-mono font-medium text-[#00b0fb] tracking-wider">GROUND DATA FLOW</div>
+                        <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col justify-between mt-6">
+                            <i data-lucide="shield-check" class="w-8 h-8 mb-6 text-[#00b0fb]"></i>
+                            <div>
+                                <h4 class="text-2xl font-bold mb-1">Verified</h4>
+                                <p class="text-xs text-slate-400 uppercase tracking-wider">On-Site Evidence</p>
+                            </div>
+                        </div>
+                        <div class="col-span-2 bg-sky-50/80 border border-sky-100 p-6 sm:p-8 rounded-3xl flex items-center justify-between">
+                            <div>
+                                <h5 class="font-bold text-slate-900 text-base sm:text-lg mb-1">Data-Driven Execution</h5>
+                                <p class="text-xs sm:text-sm text-slate-600">Turning ground observations into actionable strategic decisions.</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#00b0fb] shadow-sm shrink-0">
+                                <i data-lucide="trending-up" class="w-6 h-6"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/50 to-white"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Services Section -->
-    <section id="services" class="py-14 sm:py-20 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
+    <section id="services" class="py-16 sm:py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mb-10 sm:mb-12">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Our Services</h2>
+            <div class="max-w-3xl mb-12 sm:mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">Our Services</span>
                 <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
                     See Your Business Through a Different Lens.
                 </h3>
@@ -171,7 +198,7 @@
             </div>
 
             <!-- Detailed Services Cards with Small Icons -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
                 <!-- Service 01: Mystery Shopping -->
                 <div class="border border-brand-border bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
@@ -305,11 +332,11 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-14 sm:py-20 border-b border-brand-border bg-white scroll-mt-20">
+    <section id="how-it-works" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="max-w-2xl mb-10 sm:mb-12">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">How It Works</h2>
-                <h3 class="text-2.5xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+            <div class="max-w-2xl mb-12 sm:mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">How It Works</span>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
                     From the Ground to Clear Action.
                 </h3>
                 <p class="text-slate-600 text-sm sm:text-base">
@@ -318,7 +345,7 @@
             </div>
 
             <!-- Steps Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-10 sm:mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
                 <div class="border border-brand-border bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
@@ -388,10 +415,10 @@
     </section>
 
     <!-- Industries Section -->
-    <section id="industries" class="py-14 sm:py-20 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
+    <section id="industries" class="py-16 sm:py-24 border-b border-brand-border bg-slate-50/50 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mb-10 sm:mb-12">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Industries</h2>
+            <div class="max-w-3xl mb-12 sm:mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">Industries</span>
                 <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-3">
                     Built for Customer-Facing Businesses.
                 </h3>
@@ -400,7 +427,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
                 <div class="border border-brand-border bg-white p-5 sm:p-6 rounded-xl text-center shadow-2xs hover:border-sky-200 transition-colors">
                     <span class="font-semibold text-slate-800 text-sm sm:text-base">Restaurants & Cafés</span>
                 </div>
@@ -434,10 +461,10 @@
     </section>
 
     <!-- Why GroundOne Section -->
-    <section id="why-groundone" class="py-14 sm:py-20 border-b border-brand-border bg-white scroll-mt-20">
+    <section id="why-groundone" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mb-10 sm:mb-12">
-                <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Why GroundOne?</h2>
+            <div class="max-w-3xl mb-12 sm:mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">Why GroundOne?</span>
                 <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
                     More Than Audits. We Deliver Business Visibility.
                 </h3>
@@ -446,7 +473,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10 sm:mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
                 <div class="border border-brand-border bg-slate-50/50 p-6 sm:p-8 rounded-2xl shadow-xs">
                     <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">◉</div>
                     <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Built Around Your Decisions</h4>
@@ -481,7 +508,7 @@
             </div>
 
             <!-- Visibility Statement Banner -->
-            <div class="bg-slate-900 text-white border border-slate-800 rounded-2xl p-8 sm:p-10 shadow-md flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+            <div class="bg-slate-900 text-white border border-slate-800 rounded-2xl p-8 sm:p-12 shadow-md flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
                 <div class="space-y-2">
                     <h4 class="text-2xl sm:text-3xl font-bold tracking-tight">
                         See what’s happening.<br>
@@ -505,7 +532,7 @@
     </section>
 
     <!-- Final CTA Banner -->
-    <section class="py-14 sm:py-16 bg-sky-50/50 border-b border-brand-border text-center">
+    <section class="py-16 sm:py-20 bg-sky-50/50 border-b border-brand-border text-center">
         <div class="max-w-3xl mx-auto px-4 sm:px-6">
             <h3 class="text-2.5xl sm:text-4xl font-bold text-slate-900 mb-2">
                 You Can’t Be Everywhere.
@@ -513,20 +540,20 @@
             <p class="text-[#00b0fb] font-mono text-xs sm:text-sm tracking-wider uppercase mb-8 font-semibold">
                 But You Can Know What’s Happening.
             </p>
-            <a href="#contact" class="inline-block cta-gradient text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all shadow-sm">
+            <a href="#contact" class="inline-block cta-gradient-vibrant text-white font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all">
                 Request an Audit →
             </a>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="py-14 sm:py-20 border-b border-brand-border bg-white scroll-mt-20">
+    <section id="contact" class="py-16 sm:py-24 border-b border-brand-border bg-white scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
                 <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3">Contact</h2>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-[#00b0fb] mb-3 block">Contact</span>
                         <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-2">
                             Let’s Make Things Clearer.
                         </h3>
@@ -575,7 +602,7 @@
                                 <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="message">Message</label>
                                 <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none" placeholder="How can we help your operations?"></textarea>
                             </div>
-                            <button type="submit" class="w-full cta-gradient text-white font-bold text-xs uppercase tracking-wider py-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <button type="submit" class="w-full cta-gradient-vibrant text-white font-bold text-xs uppercase tracking-wider py-4 rounded-lg transition-colors flex items-center justify-center space-x-2">
                                 <span>Send Message</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
@@ -592,14 +619,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-white border-t border-brand-border text-sm text-slate-500">
+    <footer class="py-12 bg-white border-t border-brand-border text-sm text-slate-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4">
-                <div class="h-6 flex items-center">
-                    <picture>
-                        <source srcset="GroundOne white_4.png" type="image/png">
-                        <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-6 w-auto object-contain">
-                    </picture>
+                <div class="h-10 w-36 flex items-center bg-white border border-slate-100 rounded-xl px-2 py-1 shadow-2xs">
+                    <img src="GroundOne white_4.png" alt="GroundOne Logo" class="h-full w-full object-contain object-left">
                 </div>
                 <span class="text-slate-400 text-xs">© 2026 GroundOne. All rights reserved.</span>
             </div>
@@ -615,6 +639,22 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-dropdown');
+            menu.classList.toggle('hidden');
+        }
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(e) {
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-dropdown');
+            if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 
     <!-- Initialize Lucide Icons -->
     <script>
