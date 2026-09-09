@@ -16,13 +16,14 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -30,7 +31,7 @@
                             muted: '#64748b',
                             light: '#f8fafc',
                             card: '#ffffff',
-                            border: '#e2e8f0',
+                            border: '#cbd5e1',
                             accent: '#00b0fb',
                             mint: '#cdffd8'
                         }
@@ -42,23 +43,39 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     <style>
-        /* Lighter, vibrant palette mix gradient for Request an Audit buttons */
-        .btn-palette-light {
-            background: linear-gradient(135deg, #cdffd8 0%, #a2f9c4 30%, #70e1f5 70%, #ffd1ff 100%);
-            background-size: 200% 200%;
-            color: #0f172a;
-            box-shadow: 0 8px 20px -4px rgba(112, 225, 245, 0.35);
+        /* 1. Richer, darker mix color for Request an Audit buttons */
+        .btn-palette-dark {
+            background: linear-gradient(135deg, #09203f 0%, #1a4d7c 50%, #00b0fb 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(9, 32, 63, 0.4);
             transition: all 0.3s ease;
         }
-        .btn-palette-light:hover {
-            background-position: right center;
-            box-shadow: 0 12px 25px -4px rgba(205, 255, 216, 0.6);
+        .btn-palette-dark:hover {
+            background: linear-gradient(135deg, #05162e 0%, #133a5e 50%, #0096e6 100%);
+            box-shadow: 0 15px 30px -5px rgba(0, 176, 251, 0.5);
             transform: translateY(-1px);
         }
+
+        /* 4. Positive, uplifting background color gradience across sections */
+        .positive-gradient-hero {
+            background: radial-gradient(circle at top right, rgba(205, 255, 216, 0.35), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(0, 176, 251, 0.12), transparent 50%),
+                        linear-gradient(to bottom, #ffffff, #f4fbf7);
+        }
+        .positive-gradient-section-1 {
+            background: linear-gradient(135deg, #ffffff 0%, #f6fdf9 100%);
+        }
+        .positive-gradient-section-2 {
+            background: linear-gradient(180deg, #f6fdf9 0%, #f0f9ff 100%);
+        }
+        .positive-gradient-section-3 {
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
         .editorial-grid {
-            background-image: linear-gradient(to right, rgba(226, 232, 240, 0.3) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(226, 232, 240, 0.3) 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(203, 213, 225, 0.25) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(203, 213, 225, 0.25) 1px, transparent 1px);
+            background-size: 44px 44px;
         }
     </style>
 </head>
@@ -71,13 +88,13 @@
                 <div class="h-9 w-9 sm:h-12 sm:w-12 flex items-center justify-center bg-white border border-slate-200 rounded-xl p-1 shadow-2xs">
                     <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
                 </div>
-                <div class="flex items-center tracking-tight select-none">
+                <div class="flex items-center tracking-tight select-none font-heading">
                     <span class="text-base sm:text-2xl font-bold text-slate-900">Ground</span><span class="text-base sm:text-2xl font-normal text-[#00b0fb]">One</span>
                 </div>
             </a>
             
             <div class="flex items-center space-x-2 sm:space-x-8 ml-auto shrink-0">
-                <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-700">
                     <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
                     <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
                     <a href="#how-it-works" class="hover:text-[#00b0fb] transition-colors">How It Works</a>
@@ -91,16 +108,16 @@
                         <i data-lucide="menu" class="w-5 h-5 text-[#00b0fb]"></i>
                     </button>
                     <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-xl py-2 z-50">
-                        <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">About</a>
-                        <a href="#services" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Services</a>
-                        <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">How It Works</a>
-                        <a href="#why-groundone" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Why GroundOne</a>
-                        <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Contact</a>
+                        <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">About</a>
+                        <a href="#services" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Services</a>
+                        <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">How It Works</a>
+                        <a href="#why-groundone" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Why GroundOne</a>
+                        <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb]">Contact</a>
                     </div>
                 </div>
 
                 <div class="flex items-center">
-                    <a href="#contact" class="btn-palette-light text-slate-900 text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
+                    <a href="#contact" class="btn-palette-dark text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider px-3.5 sm:px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
                         Request an Audit →
                     </a>
                 </div>
@@ -109,63 +126,62 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden bg-gradient-to-b from-[#cdffd8]/25 via-white to-white border-b border-slate-200 editorial-grid">
+    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden positive-gradient-hero border-b border-slate-200 editorial-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
             <div class="max-w-3xl space-y-6">
-                <div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-mono font-medium tracking-widest text-slate-600 uppercase bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-2xs">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#00b0fb]"></span>
+                <div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-mono font-bold tracking-widest text-emerald-800 uppercase bg-[#cdffd8]/70 border border-emerald-200 px-4 py-1.5 rounded-full shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
                     <span>Ground Level Intelligence</span>
                 </div>
                 
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1]">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading tracking-tight text-slate-900 leading-[1.1]">
                     Turn Ground <span class="text-[#00b0fb]">Reality</span> Into Better Decisions.
                 </h1>
                 
-                <p class="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-2xl pt-2">
+                <p class="text-base sm:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl pt-2">
                     We uncover what is happening across your customer-facing operations and transform real-world observations into actionable insights that drive better business performance.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
-                    <a href="#contact" class="btn-palette-light text-slate-900 font-bold text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-all flex items-center justify-center space-x-3 shadow-md">
+                    <a href="#contact" class="btn-palette-dark font-bold text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-all flex items-center justify-center space-x-3 shadow-md">
                         <span>Request an Audit</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="#services" class="border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-medium text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-colors flex items-center justify-center space-x-3 shadow-2xs">
+                    <a href="#services" class="border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-semibold text-xs sm:text-sm tracking-wider uppercase px-8 py-4 rounded-full text-center transition-colors flex items-center justify-center space-x-3 shadow-2xs">
                         <span>Explore Our Services</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
                     </a>
                 </div>
 
-                <div class="pt-10 border-t border-slate-200 mt-12 flex items-center space-x-4">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-[10px] font-bold text-slate-700">G1</div>
-                        <div class="w-7 h-7 rounded-full bg-[#cdffd8] border-2 border-white flex items-center justify-center text-[10px] font-bold text-emerald-900">✓</div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">Trusted by multi-outlet retail, dining, and service teams.</p>
+                <div class="pt-10 border-t border-slate-200 mt-12">
+                    <p class="text-xs uppercase tracking-widest text-slate-500 font-mono font-bold">
+                        See. Know. Grow.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About GroundOne Section (More Human, Warm, & Professional) -->
-    <section id="about" class="py-20 sm:py-28 border-b border-slate-200 bg-white scroll-mt-20">
+    <!-- About GroundOne Section -->
+    <section id="about" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 <!-- Left Editorial Column -->
                 <div class="lg:col-span-6 space-y-8">
                     <div>
-                        <div class="flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
+                        <!-- 3. Professional, enhanced font typography for section headings -->
+                        <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 bg-[#cdffd8]/60 px-3.5 py-1.5 rounded-full mb-4 border border-emerald-200">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
                             <span>About GroundOne</span>
                         </div>
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 leading-[1.15]">
                             We Make the Ground Reality Visible.
                         </h2>
                     </div>
 
-                    <div class="border-l-2 border-[#00b0fb] pl-6 py-2 space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
-                        <p class="font-semibold text-slate-900 text-lg">
+                    <div class="border-l-4 border-[#00b0fb] pl-6 py-2 space-y-4 text-slate-600 text-base sm:text-lg leading-relaxed">
+                        <p class="font-bold text-slate-900 text-lg">
                             As your business grows, keeping eyes on every single outlet becomes an uphill battle. 
                         </p>
                         <p>
@@ -177,45 +193,45 @@
                     </div>
 
                     <div class="pt-2">
-                        <div class="inline-block bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-sm">
-                            <p class="text-xs font-mono tracking-widest uppercase text-slate-400 mb-1">Our Human Philosophy</p>
-                            <p class="font-bold text-sm sm:text-base">Help businesses see better, know more, and grow smarter.</p>
+                        <div class="inline-block bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-sm border border-slate-800">
+                            <p class="text-xs font-mono tracking-widest uppercase text-[#cdffd8] mb-1 font-bold">Our Human Philosophy</p>
+                            <p class="font-bold text-sm sm:text-base font-heading">Help businesses see better, know more, and grow smarter.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Custom Information Panels -->
                 <div class="lg:col-span-6 space-y-4">
-                    <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
+                    <div class="bg-white/80 backdrop-blur-sm border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between shadow-2xs hover:border-sky-300 transition-colors">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-[#00b0fb] uppercase tracking-wider">Perspective 01</span>
-                            <h4 class="text-2xl font-bold text-slate-900">100% Independent Audits</h4>
-                            <p class="text-xs text-slate-600">Evaluations done by real people experiencing your brand firsthand.</p>
+                            <span class="text-xs font-mono text-[#00b0fb] font-bold uppercase tracking-wider">Perspective 01</span>
+                            <h4 class="text-2xl font-bold font-heading text-slate-900">100% Independent Audits</h4>
+                            <p class="text-xs text-slate-600 font-medium">Evaluations done by real people experiencing your brand firsthand.</p>
                         </div>
-                        <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
-                            <i data-lucide="shield-check" class="w-6 h-6 text-[#00b0fb]"></i>
+                        <div class="w-12 h-12 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] shrink-0 font-bold shadow-2xs">
+                            <i data-lucide="shield-check" class="w-6 h-6"></i>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
+                    <div class="bg-white/80 backdrop-blur-sm border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between shadow-2xs hover:border-emerald-300 transition-colors">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-emerald-600 uppercase tracking-wider">Perspective 02</span>
-                            <h4 class="text-2xl font-bold text-slate-900">Real-Time Evidence</h4>
-                            <p class="text-xs text-slate-600">Authentic photographs, timestamps, and genuine customer feedback.</p>
+                            <span class="text-xs font-mono text-emerald-700 font-bold uppercase tracking-wider">Perspective 02</span>
+                            <h4 class="text-2xl font-bold font-heading text-slate-900">Real-Time Evidence</h4>
+                            <p class="text-xs text-slate-600 font-medium">Authentic photographs, timestamps, and genuine customer feedback.</p>
                         </div>
-                        <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
-                            <i data-lucide="camera" class="w-6 h-6 text-emerald-600"></i>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 shrink-0 font-bold shadow-2xs">
+                            <i data-lucide="camera" class="w-6 h-6"></i>
                         </div>
                     </div>
 
-                    <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between">
+                    <div class="bg-white/80 backdrop-blur-sm border border-slate-200 p-6 sm:p-8 rounded-2xl flex items-center justify-between shadow-2xs hover:border-indigo-300 transition-colors">
                         <div class="space-y-1">
-                            <span class="text-xs font-mono text-indigo-600 uppercase tracking-wider">Perspective 03</span>
-                            <h4 class="text-2xl font-bold text-slate-900">Clear Actionable Steps</h4>
-                            <p class="text-xs text-slate-600">No jargon or clutter—just priorities that matter to your daily operations.</p>
+                            <span class="text-xs font-mono text-indigo-700 font-bold uppercase tracking-wider">Perspective 03</span>
+                            <h4 class="text-2xl font-bold font-heading text-slate-900">Clear Actionable Steps</h4>
+                            <p class="text-xs text-slate-600 font-medium">No jargon or clutter—just priorities that matter to your daily operations.</p>
                         </div>
-                        <div class="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shrink-0 font-bold shadow-2xs">
-                            <i data-lucide="trending-up" class="w-6 h-6 text-indigo-600"></i>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 shrink-0 font-bold shadow-2xs">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
                         </div>
                     </div>
                 </div>
@@ -225,17 +241,18 @@
     </section>
 
     <!-- Our Services Section -->
-    <section id="services" class="py-20 sm:py-28 border-b border-slate-200 bg-slate-50/60 scroll-mt-20">
+    <section id="services" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-2 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-3xl mb-12 sm:mb-16">
-                <div class="flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
+                <!-- 3. Professional font styling for section header tag -->
+                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-sky-800 bg-sky-100 px-3.5 py-1.5 rounded-full mb-4 border border-sky-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
                     <span>Our Services</span>
                 </div>
-                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
                     See Your Business Through a Different Lens.
                 </h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                     We turn real-world observations into clear intelligence that helps businesses improve customer experience, strengthen operations, and maintain consistency across every outlet.
                 </p>
             </div>
@@ -243,20 +260,20 @@
             <!-- Detailed Services Cards -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
                 <!-- Service 1: Mystery Shopping -->
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white/9ontal backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
-                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-[#00b0fb] bg-sky-50 px-3 py-1 rounded-md border border-sky-100">Experience</span>
-                            <span class="text-xs font-mono text-slate-400">01</span>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#00b0fb] bg-sky-50 px-3 py-1 rounded-md border border-sky-100">Experience</span>
+                            <span class="text-xs font-mono font-bold text-slate-400">01</span>
                         </div>
-                        <h4 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Mystery Shopping</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h4 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 mb-3">Mystery Shopping</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
                             Experience your business through the eyes of a real customer. Our mystery shoppers visit your outlets as genuine customers and evaluate the complete experience from arrival and staff interaction to service, product presentation, upselling, billing, and farewell.
                         </p>
                         
                         <div class="space-y-3 mb-6">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
-                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="users" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
                                     <span>Customer service & staff behaviour</span>
@@ -285,25 +302,25 @@
                         </div>
                     </div>
                     <div class="pt-4 sm:pt-6 border-t border-slate-100 bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
-                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A clear, evidence-backed view of what your customers actually experience.</p>
+                        <p class="text-xs text-slate-600 font-medium"><strong class="text-slate-900 font-bold">Outcome:</strong> A clear, evidence-backed view of what your customers actually experience.</p>
                     </div>
                 </div>
 
                 <!-- Service 2: Outlet Audits -->
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
-                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">Execution</span>
-                            <span class="text-xs font-mono text-slate-400">02</span>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">Execution</span>
+                            <span class="text-xs font-mono font-bold text-slate-400">02</span>
                         </div>
-                        <h4 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Outlet Audits</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h4 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 mb-3">Outlet Audits</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
                             Know whether every outlet is meeting your standards. We evaluate your outlets against defined operational, brand, hygiene, and service standards to identify inconsistencies and gaps.
                         </p>
 
                         <div class="space-y-3 mb-6">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
-                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">What we evaluate:</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-600 shrink-0"></i>
                                     <span>Brand & visual standards</span>
@@ -328,25 +345,25 @@
                         </div>
                     </div>
                     <div class="pt-4 sm:pt-6 border-t border-slate-100 bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
-                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> A structured view of where your outlets are performing and where they need attention.</p>
+                        <p class="text-xs text-slate-600 font-medium"><strong class="text-slate-900 font-bold">Outcome:</strong> A structured view of where your outlets are performing and where they need attention.</p>
                     </div>
                 </div>
 
                 <!-- Service 3: Customer Experience -->
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
-                            <span class="text-xs font-mono font-semibold uppercase tracking-widest text-indigo-700 bg-indigo-50 px-3 py-1 rounded-md border border-indigo-100">Insight</span>
-                            <span class="text-xs font-mono text-slate-400">03</span>
+                            <span class="text-xs font-mono font-bold uppercase tracking-widest text-indigo-700 bg-indigo-50 px-3 py-1 rounded-md border border-indigo-100">Insight</span>
+                            <span class="text-xs font-mono font-bold text-slate-400">03</span>
                         </div>
-                        <h4 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Customer Experience</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        <h4 class="text-xl sm:text-2xl font-bold font-heading text-slate-900 mb-3">Customer Experience</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
                             Understand the moments that shape customer perception. We assess the customer journey to uncover service gaps, friction points, inconsistencies, and opportunities to create a better experience.
                         </p>
 
                         <div class="space-y-3 mb-6">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-900 font-mono">We look at:</p>
-                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                            <p class="text-xs font-bold uppercase tracking-wider text-slate-900 font-mono">We look at:</p>
+                            <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="git-commit" class="w-4 h-4 text-indigo-600 shrink-0"></i>
                                     <span>Customer journey & touchpoints</span>
@@ -367,7 +384,7 @@
                         </div>
                     </div>
                     <div class="pt-4 sm:pt-6 border-t border-slate-100 bg-slate-50/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5 sm:p-6 rounded-b-2xl">
-                        <p class="text-xs text-slate-600"><strong class="text-slate-900">Outcome:</strong> Actionable insights that help turn better experiences into stronger customer relationships.</p>
+                        <p class="text-xs text-slate-600 font-medium"><strong class="text-slate-900 font-bold">Outcome:</strong> Actionable insights that help turn better experiences into stronger customer relationships.</p>
                     </div>
                 </div>
             </div>
@@ -375,83 +392,84 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 sm:py-28 border-b border-slate-200 bg-white scroll-mt-20">
+    <section id="how-it-works" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-3 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-2xl mb-12 sm:mb-16">
-                <div class="flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
+                <!-- 3. Professional font styling for section header tag -->
+                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-indigo-800 bg-indigo-100 px-3.5 py-1.5 rounded-full mb-4 border border-indigo-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
                     <span>How It Works</span>
                 </div>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
+                <h3 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
                     From the Ground to Clear Action.
                 </h3>
-                <p class="text-slate-600 text-sm sm:text-base">
+                <p class="text-slate-600 font-medium text-sm sm:text-base">
                     We make it simple to understand what is happening across your customer-facing operations.
                 </p>
             </div>
 
             <!-- Steps Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
-                <div class="border border-slate-200 bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white p-5 sm:p-6 rounded-xl flex flex-col justify-between shadow-2xs">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
                             <i data-lucide="target" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">Step 01</div>
-                        <h4 class="text-base font-bold text-slate-900 mb-2">Objectives Setup</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
+                        <div class="text-xs font-mono font-bold text-[#00b0fb] mb-1">Step 01</div>
+                        <h4 class="text-base font-bold font-heading text-slate-900 mb-2">Objectives Setup</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed font-medium">
                             We align on your outlets, objectives, evaluation areas, and the standards you want us to assess.
                         </p>
                     </div>
                 </div>
 
-                <div class="border border-slate-200 bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white p-5 sm:p-6 rounded-xl flex flex-col justify-between shadow-2xs">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 mb-4">
                             <i data-lucide="map-pin" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-xs font-mono font-semibold text-emerald-700 mb-1">Step 02</div>
-                        <h4 class="text-base font-bold text-slate-900 mb-2">On-Site Audit</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
+                        <div class="text-xs font-mono font-bold text-emerald-700 mb-1">Step 02</div>
+                        <h4 class="text-base font-bold font-heading text-slate-900 mb-2">On-Site Audit</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed font-medium">
                             A trained GroundOne evaluator visits as a genuine customer or independent auditor, depending on the assignment.
                         </p>
                     </div>
                 </div>
 
-                <div class="border border-slate-200 bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white p-5 sm:p-6 rounded-xl flex flex-col justify-between shadow-2xs">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-sky-50 border border-sky-100 flex items-center justify-center text-[#00b0fb] mb-4">
                             <i data-lucide="search" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-1">Step 03</div>
-                        <h4 class="text-base font-bold text-slate-900 mb-2">Standard Check</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
+                        <div class="text-xs font-mono font-bold text-[#00b0fb] mb-1">Step 03</div>
+                        <h4 class="text-base font-bold font-heading text-slate-900 mb-2">Standard Check</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed font-medium">
                             Using a structured evaluation framework, we assess everything from customer service and staff behaviour to outlet standards, hygiene, operations, and billing.
                         </p>
                     </div>
                 </div>
 
-                <div class="border border-slate-200 bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white p-5 sm:p-6 rounded-xl flex flex-col justify-between shadow-2xs">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 mb-4">
                             <i data-lucide="camera" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-xs font-mono font-semibold text-indigo-700 mb-1">Step 04</div>
-                        <h4 class="text-base font-bold text-slate-900 mb-2">Evidence Logging</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
+                        <div class="text-xs font-mono font-bold text-indigo-700 mb-1">Step 04</div>
+                        <h4 class="text-base font-bold font-heading text-slate-900 mb-2">Evidence Logging</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed font-medium">
                             Relevant observations are supported with photographs, receipts, timestamps, and other appropriate evidence.
                         </p>
                     </div>
                 </div>
 
-                <div class="border border-slate-200 bg-slate-50/50 p-5 sm:p-6 rounded-xl flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                <div class="border border-slate-200 bg-white p-5 sm:p-6 rounded-xl flex flex-col justify-between sm:col-span-2 lg:col-span-1 shadow-2xs">
                     <div>
                         <div class="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-700 mb-4">
                             <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
                         </div>
-                        <div class="text-xs font-mono font-semibold text-emerald-700 mb-1">Step 05</div>
-                        <h4 class="text-base font-bold text-slate-900 mb-2">Actionable Data</h4>
-                        <p class="text-slate-600 text-xs leading-relaxed">
+                        <div class="text-xs font-mono font-bold text-emerald-700 mb-1">Step 05</div>
+                        <h4 class="text-base font-bold font-heading text-slate-900 mb-2">Actionable Data</h4>
+                        <p class="text-slate-600 text-xs leading-relaxed font-medium">
                             We turn observations into a clear report highlighting performance, key issues, strengths, opportunities, and recommended actions.
                         </p>
                     </div>
@@ -461,70 +479,71 @@
     </section>
 
     <!-- Why GroundOne Section -->
-    <section id="why-groundone" class="py-20 sm:py-28 border-b border-slate-200 bg-white scroll-mt-20">
+    <section id="why-groundone" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-3xl mb-12 sm:mb-16">
-                <div class="flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
+                <!-- 3. Professional font styling for section header tag -->
+                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-teal-800 bg-teal-100 px-3.5 py-1.5 rounded-full mb-4 border border-teal-200">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
                     <span>Why GroundOne</span>
                 </div>
-                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
                     More Than Audits. Business Visibility.
                 </h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                     GroundOne turns on-ground activity into clear insights, focused action, and measurable improvement so businesses know not just what happened, but what matters and what to do next.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16">
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs">
-                    <div class="text-xs font-mono font-semibold text-[#00b0fb] mb-2">01</div>
-                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Built Around Your Decisions</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-2xs">
+                    <div class="text-xs font-mono font-bold text-[#00b0fb] mb-2">01</div>
+                    <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900 mb-2">Built Around Your Decisions</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
                         We start with the business question, not a standard questionnaire. Every audit is designed around the decisions you need to make.
                     </p>
                 </div>
 
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs">
-                    <div class="text-xs font-mono font-semibold text-emerald-700 mb-2">02</div>
-                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Insights, Not Information</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-2xs">
+                    <div class="text-xs font-mono font-bold text-emerald-700 mb-2">02</div>
+                    <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900 mb-2">Insights, Not Information</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
                         Forget lengthy spreadsheets and endless reports. GroundOne highlights the gaps, opportunities, and priorities that deserve your attention.
                     </p>
                 </div>
 
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs">
-                    <div class="text-xs font-mono font-semibold text-indigo-700 mb-2">03</div>
-                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">Measure What Matters</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-2xs">
+                    <div class="text-xs font-mono font-bold text-indigo-700 mb-2">03</div>
+                    <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900 mb-2">Measure What Matters</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
                         Our scoring frameworks turn on-ground performance into a simple, clear metric view across every location.
                     </p>
                 </div>
 
-                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-xs">
-                    <div class="text-xs font-mono font-semibold text-emerald-800 mb-2">04</div>
-                    <h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-2">From Findings to Improvement</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
+                <div class="border border-slate-200 bg-white p-6 sm:p-8 rounded-2xl shadow-2xs">
+                    <div class="text-xs font-mono font-bold text-emerald-800 mb-2">04</div>
+                    <h4 class="text-lg sm:text-xl font-bold font-heading text-slate-900 mb-2">From Findings to Improvement</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
                         We help identify what needs fixing and track whether standards actually improve over time.
                     </p>
                 </div>
             </div>
 
-            <!-- Redesigned 'See What's Happening' Part (Using the lighter palette button & warm human tone) -->
+            <!-- 'See What's Happening' Part -->
             <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white border border-slate-800 rounded-3xl p-8 sm:p-14 shadow-xl relative overflow-hidden">
-                <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00b0fb]/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -left-10 -top-10 w-60 h-60 bg-[#cdffd8]/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00b0fb]/15 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-60 h-60 bg-[#cdffd8]/15 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
                     <div class="space-y-3 max-w-xl">
-                        <span class="text-xs font-mono uppercase tracking-widest text-[#cdffd8] font-semibold">The Advantage Is Knowing</span>
-                        <h4 class="text-2xl sm:text-4xl font-bold tracking-tight leading-tight text-white">
+                        <span class="text-xs font-mono uppercase tracking-widest text-[#cdffd8] font-bold">The Advantage Is Knowing</span>
+                        <h4 class="text-2xl sm:text-4xl font-extrabold font-heading tracking-tight leading-tight text-white">
                             You can't be everywhere.<br>
-                            <span class="text-[#cdffd8]">But you can know what's happening.</span>
+                            <span class="text-[#00b0fb]">But you can know what's happening.</span>
                         </h4>
                     </div>
                     <div class="shrink-0">
-                        <a href="#contact" class="btn-palette-light text-slate-900 font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all inline-flex items-center space-x-2">
+                        <a href="#contact" class="btn-palette-dark font-bold text-xs uppercase tracking-wider px-8 py-4 rounded-full transition-all inline-flex items-center space-x-2">
                             <span>Request an audit</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
@@ -535,34 +554,35 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="py-20 sm:py-28 border-t border-slate-200 bg-slate-50/60 scroll-mt-20">
+    <section id="contact" class="py-20 sm:py-28 border-t border-slate-200 positive-gradient-section-2 scroll-mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
                 <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <div class="flex items-center space-x-2 text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                            <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
+                        <!-- 3. Professional font styling for section header tag -->
+                        <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-slate-700 bg-slate-200 px-3.5 py-1.5 rounded-full mb-4 border border-slate-300">
+                            <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
                             <span>Contact</span>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-2">
+                        <h3 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight text-slate-900 mb-2">
                             Let Us Make Things Clearer.
                         </h3>
-                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed mb-6">
                             Reach out to the GroundOne team and discover how better on ground insights can lead to better business decisions.
                         </p>
                     </div>
 
                     <div class="space-y-4 pt-4 border-t border-slate-200">
                         <div>
-                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Direct Email</span>
-                            <a href="mailto:hello@groundone.in" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-base sm:text-lg">
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono font-bold block mb-1">Direct Email</span>
+                            <a href="mailto:hello@groundone.in" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-semibold text-base sm:text-lg">
                                 hello@groundone.in
                             </a>
                         </div>
                         <div>
-                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono block mb-1">Phone / WhatsApp</span>
-                            <a href="tel:+919939874449" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-medium text-base sm:text-lg">
+                            <span class="text-xs uppercase tracking-widest text-slate-400 font-mono font-bold block mb-1">Phone / WhatsApp</span>
+                            <a href="tel:+919939874449" class="text-slate-900 hover:text-[#00b0fb] transition-colors font-semibold text-base sm:text-lg">
                                 +91 9939874449
                             </a>
                         </div>
@@ -574,32 +594,32 @@
                     <div class="bg-slate-900 text-white p-6 sm:p-10 rounded-3xl shadow-xl relative border-t-4 border-[#00b0fb]">
                         <form action="https://formspree.io/f/mwlkrelk" method="POST" class="space-y-4 sm:space-y-6">
                             <div>
-                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="name">Name</label>
-                                <input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Enter your full name">
+                                <label class="block text-xs uppercase tracking-wider font-mono font-bold text-slate-400 mb-2" for="name">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors font-medium" placeholder="Enter your full name">
                             </div>
                             <div>
-                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="phone">Phone No.</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="+91 XXXXX XXXXX">
+                                <label class="block text-xs uppercase tracking-wider font-mono font-bold text-slate-400 mb-2" for="phone">Phone No.</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors font-medium" placeholder="+91 XXXXX XXXXX">
                             </div>
                             <div>
-                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="email">Work Email</label>
-                                <input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="name@company.com">
+                                <label class="block text-xs uppercase tracking-wider font-mono font-bold text-slate-400 mb-2" for="email">Work Email</label>
+                                <input type="email" id="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors font-medium" placeholder="name@company.com">
                             </div>
                             <div>
-                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="company">Company</label>
-                                <input type="text" id="company" name="company" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors" placeholder="Company Name">
+                                <label class="block text-xs uppercase tracking-wider font-mono font-bold text-slate-400 mb-2" for="company">Company</label>
+                                <input type="text" id="company" name="company" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors font-medium" placeholder="Company Name">
                             </div>
                             <div>
-                                <label class="block text-xs uppercase tracking-wider font-mono text-slate-400 mb-2" for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none" placeholder="How can we help your operations?"></textarea>
+                                <label class="block text-xs uppercase tracking-wider font-mono font-bold text-slate-400 mb-2" for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3.5 text-white text-sm placeholder-slate-500 focus:outline-none focus:border-[#00b0fb] transition-colors resize-none font-medium" placeholder="How can we help your operations?"></textarea>
                             </div>
-                            <button type="submit" class="w-full btn-palette-light text-slate-900 font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center space-x-2">
+                            <button type="submit" class="w-full btn-palette-dark font-bold text-xs uppercase tracking-wider py-4 rounded-xl transition-colors flex items-center justify-center space-x-2">
                                 <span>Send Message</span>
                                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
                             </button>
                         </form>
                         <div class="mt-6 pt-4 border-t border-slate-800 text-center">
-                            <p class="text-xs text-slate-400 font-mono">
+                            <p class="text-xs text-slate-400 font-mono font-medium">
                                 We usually respond within 24 hours.
                             </p>
                         </div>
@@ -616,12 +636,12 @@
                 <div class="h-8 w-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg p-0.5 shadow-2xs shrink-0">
                     <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
                 </div>
-                <div class="flex items-center tracking-tight select-none">
+                <div class="flex items-center tracking-tight select-none font-heading">
                     <span class="text-base font-bold text-slate-900">Ground</span><span class="text-base font-normal text-[#00b0fb]">One</span>
                 </div>
-                <span class="text-slate-400 text-xs ml-2">© 2026 GroundOne. All rights reserved.</span>
+                <span class="text-slate-400 text-xs ml-2 font-medium">© 2026 GroundOne. All rights reserved.</span>
             </div>
-            <div class="text-xs uppercase tracking-widest text-slate-400 font-mono font-medium">
+            <div class="text-xs uppercase tracking-widest text-slate-400 font-mono font-bold">
                 See. Know. Grow.
             </div>
         </div>
