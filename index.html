@@ -43,7 +43,6 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     <style>
-        /* 1. Richer, darker mix color for Request an Audit buttons */
         .btn-palette-dark {
             background: linear-gradient(135deg, #09203f 0%, #1a4d7c 50%, #00b0fb 100%);
             color: #ffffff;
@@ -56,7 +55,6 @@
             transform: translateY(-1px);
         }
 
-        /* 4. Positive, uplifting background color gradience across sections */
         .positive-gradient-hero {
             background: radial-gradient(circle at top right, rgba(205, 255, 216, 0.35), transparent 40%),
                         radial-gradient(circle at bottom left, rgba(0, 176, 251, 0.12), transparent 50%),
@@ -79,7 +77,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-brand-dark font-sans antialiased selection:bg-[#cdffd8] selection:text-slate-900">
+<body class="bg-white text-brand-dark font-sans antialiased selection:bg-[#cdffd8] selection:text-slate-900 relative overflow-x-hidden">
 
     <!-- Header / Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
@@ -126,11 +124,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden positive-gradient-hero border-b border-slate-200 editorial-grid">
+    <section class="min-h-[85vh] sm:min-h-[90vh] pt-32 sm:pt-40 pb-16 sm:pb-20 flex items-center relative overflow-hidden positive-gradient-hero border-b border-slate-200 editorial-grid z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10">
             <div class="max-w-3xl space-y-6">
-                <div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs font-mono font-bold tracking-widest text-emerald-800 uppercase bg-[#cdffd8]/70 border border-emerald-200 px-4 py-1.5 rounded-full shadow-2xs">
-                    <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-[#00b0fb]"></span>
                     <span>Ground Level Intelligence</span>
                 </div>
                 
@@ -163,16 +161,15 @@
     </section>
 
     <!-- About GroundOne Section -->
-    <section id="about" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20">
+    <section id="about" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
                 <!-- Left Editorial Column -->
                 <div class="lg:col-span-6 space-y-8">
                     <div>
-                        <!-- 3. Professional, enhanced font typography for section headings -->
-                        <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-emerald-800 bg-[#cdffd8]/60 px-3.5 py-1.5 rounded-full mb-4 border border-emerald-200">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg mb-4 shadow-2xs">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
                             <span>About GroundOne</span>
                         </div>
                         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 leading-[1.15]">
@@ -185,7 +182,7 @@
                             As your business grows, keeping eyes on every single outlet becomes an uphill battle. 
                         </p>
                         <p>
-                            That is why we stepped in. GroundOne gives founders and operators a clear, unfiltered look at what is happening on the ground—cutting through polished spreadsheets and assumptions.
+                            That is why we stepped in. GroundOne gives founders and operators a clear, unfiltered look at what is happening on the ground, cutting through polished spreadsheets and assumptions.
                         </p>
                         <p>
                             Through careful independent mystery shopping and site audits, we gather real proof so you can fix gaps before they affect your bottom line.
@@ -193,9 +190,9 @@
                     </div>
 
                     <div class="pt-2">
-                        <div class="inline-block bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-sm border border-slate-800">
-                            <p class="text-xs font-mono tracking-widest uppercase text-[#cdffd8] mb-1 font-bold">Our Human Philosophy</p>
-                            <p class="font-bold text-sm sm:text-base font-heading">Help businesses see better, know more, and grow smarter.</p>
+                        <div class="bg-slate-900 text-white px-6 py-5 rounded-2xl shadow-sm border border-slate-800 space-y-1">
+                            <p class="text-xs tracking-wide uppercase text-slate-400 font-medium">Our Core Focus</p>
+                            <p class="font-semibold text-base sm:text-lg font-heading text-white">Helping businesses see clearly, know accurately, and grow sustainably.</p>
                         </div>
                     </div>
                 </div>
@@ -228,7 +225,7 @@
                         <div class="space-y-1">
                             <span class="text-xs font-mono text-indigo-700 font-bold uppercase tracking-wider">Perspective 03</span>
                             <h4 class="text-2xl font-bold font-heading text-slate-900">Clear Actionable Steps</h4>
-                            <p class="text-xs text-slate-600 font-medium">No jargon or clutter—just priorities that matter to your daily operations.</p>
+                            <p class="text-xs text-slate-600 font-medium">No jargon or clutter, just priorities that matter to your daily operations.</p>
                         </div>
                         <div class="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-700 shrink-0 font-bold shadow-2xs">
                             <i data-lucide="trending-up" class="w-6 h-6"></i>
@@ -241,12 +238,11 @@
     </section>
 
     <!-- Our Services Section -->
-    <section id="services" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-2 scroll-mt-20">
+    <section id="services" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-2 scroll-mt-20 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-3xl mb-12 sm:mb-16">
-                <!-- 3. Professional font styling for section header tag -->
-                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-sky-800 bg-sky-100 px-3.5 py-1.5 rounded-full mb-4 border border-sky-200">
-                    <span class="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
+                <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg mb-4 shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-sky-600"></span>
                     <span>Our Services</span>
                 </div>
                 <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
@@ -260,7 +256,7 @@
             <!-- Detailed Services Cards -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
                 <!-- Service 1: Mystery Shopping -->
-                <div class="border border-slate-200 bg-white/9ontal backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+                <div class="border border-slate-200 bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="text-xs font-mono font-bold uppercase tracking-widest text-[#00b0fb] bg-sky-50 px-3 py-1 rounded-md border border-sky-100">Experience</span>
@@ -276,15 +272,15 @@
                             <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="users" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
-                                    <span>Customer service & staff behaviour</span>
+                                    <span>Customer service and staff behaviour</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="package" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
-                                    <span>Product & service experience</span>
+                                    <span>Product and service experience</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="trending-up" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
-                                    <span>Upselling & product knowledge</span>
+                                    <span>Upselling and product knowledge</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="sparkles" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
@@ -292,7 +288,7 @@
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="receipt" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
-                                    <span>Billing & checkout</span>
+                                    <span>Billing and checkout</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="smile" class="w-4 h-4 text-[#00b0fb] shrink-0"></i>
@@ -323,23 +319,23 @@
                             <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                                    <span>Brand & visual standards</span>
+                                    <span>Brand and visual standards</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="user-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                                    <span>Staff grooming & uniform</span>
+                                    <span>Staff grooming and uniform</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                                    <span>Hygiene & cleanliness</span>
+                                    <span>Hygiene and cleanliness</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="sliders" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                                    <span>Operational procedures & SOPs</span>
+                                    <span>Operational procedures and SOPs</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="store" class="w-4 h-4 text-emerald-600 shrink-0"></i>
-                                    <span>Product display & presentation</span>
+                                    <span>Product display and presentation</span>
                                 </li>
                             </ul>
                         </div>
@@ -366,19 +362,19 @@
                             <ul class="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="git-commit" class="w-4 h-4 text-indigo-600 shrink-0"></i>
-                                    <span>Customer journey & touchpoints</span>
+                                    <span>Customer journey and touchpoints</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="activity" class="w-4 h-4 text-indigo-600 shrink-0"></i>
-                                    <span>Service quality & consistency</span>
+                                    <span>Service quality and consistency</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="alert-circle" class="w-4 h-4 text-indigo-600 shrink-0"></i>
-                                    <span>Friction points & customer pain points</span>
+                                    <span>Friction points and customer pain points</span>
                                 </li>
                                 <li class="flex items-center space-x-2.5">
                                     <i data-lucide="bar-chart-2" class="w-4 h-4 text-indigo-600 shrink-0"></i>
-                                    <span>Satisfaction & improvement areas</span>
+                                    <span>Satisfaction and improvement areas</span>
                                 </li>
                             </ul>
                         </div>
@@ -392,12 +388,11 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-3 scroll-mt-20">
+    <section id="how-it-works" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-3 scroll-mt-20 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-2xl mb-12 sm:mb-16">
-                <!-- 3. Professional font styling for section header tag -->
-                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-indigo-800 bg-indigo-100 px-3.5 py-1.5 rounded-full mb-4 border border-indigo-200">
-                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+                <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg mb-4 shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
                     <span>How It Works</span>
                 </div>
                 <h3 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
@@ -479,12 +474,11 @@
     </section>
 
     <!-- Why GroundOne Section -->
-    <section id="why-groundone" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20">
+    <section id="why-groundone" class="py-20 sm:py-28 border-b border-slate-200 positive-gradient-section-1 scroll-mt-20 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="max-w-3xl mb-12 sm:mb-16">
-                <!-- 3. Professional font styling for section header tag -->
-                <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-teal-800 bg-teal-100 px-3.5 py-1.5 rounded-full mb-4 border border-teal-200">
-                    <span class="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+                <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg mb-4 shadow-2xs">
+                    <span class="w-2 h-2 rounded-full bg-teal-600"></span>
                     <span>Why GroundOne</span>
                 </div>
                 <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight text-slate-900 mb-4">
@@ -554,15 +548,14 @@
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact" class="py-20 sm:py-28 border-t border-slate-200 positive-gradient-section-2 scroll-mt-20">
+    <section id="contact" class="py-20 sm:py-28 border-t border-slate-200 positive-gradient-section-2 scroll-mt-20 z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
                 <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <!-- 3. Professional font styling for section header tag -->
-                        <div class="inline-flex items-center space-x-2 text-xs font-mono font-bold uppercase tracking-widest text-slate-700 bg-slate-200 px-3.5 py-1.5 rounded-full mb-4 border border-slate-300">
-                            <span class="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-4 py-2 rounded-lg mb-4 shadow-2xs">
+                            <span class="w-2 h-2 rounded-full bg-slate-700"></span>
                             <span>Contact</span>
                         </div>
                         <h3 class="text-3xl sm:text-4xl font-extrabold font-heading tracking-tight text-slate-900 mb-2">
@@ -619,7 +612,7 @@
                             </button>
                         </form>
                         <div class="mt-6 pt-4 border-t border-slate-800 text-center">
-                            <p class="text-xs text-slate-400 font-mono font-medium">
+                            <p class="text-xs text-slate-400 font-sans font-medium">
                                 We usually respond within 24 hours.
                             </p>
                         </div>
@@ -630,7 +623,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-white border-t border-slate-200 text-sm text-slate-500">
+    <footer class="py-10 bg-white border-t border-slate-200 text-sm text-slate-500 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div class="flex items-center space-x-3">
                 <div class="h-8 w-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg p-0.5 shadow-2xs shrink-0">
