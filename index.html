@@ -55,7 +55,6 @@
             transform: translateY(-1px);
         }
 
-        /* WhatsApp Button Style */
         .btn-whatsapp {
             background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
             color: #ffffff;
@@ -113,7 +112,7 @@
                     <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
                 </nav>
 
-                <!-- Mobile Dropdown Menu (Includes Request an Audit and Chat with Us buttons) -->
+                <!-- Mobile Dropdown Menu -->
                 <div class="relative lg:hidden">
                     <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 rounded-xl transition-colors border border-slate-200" aria-label="Toggle Menu">
                         <i data-lucide="menu" class="w-5 h-5 text-[#00b0fb]"></i>
@@ -584,7 +583,7 @@
                 <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg mb-3 sm:mb-4 shadow-2xs">
+                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg mb-3 sm:mb-4 shadow-2xs">
                             <span class="w-2 h-2 rounded-full bg-slate-700"></span>
                             <span>Contact</span>
                         </div>
@@ -652,9 +651,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Vertical Aligned Light Navigation Links -->
     <footer class="py-12 bg-white border-t border-slate-200 text-sm text-slate-500 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center sm:items-start space-y-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center sm:items-start space-y-6">
             <div class="flex items-center space-x-3">
                 <div class="h-8 w-8 flex items-center justify-center bg-white border border-slate-200 rounded-lg p-0.5 shadow-2xs shrink-0">
                     <img src="GroundOne symbol_4.png" alt="GroundOne Symbol" class="h-full w-full object-contain">
@@ -664,9 +663,18 @@
                 </div>
             </div>
             
-            <div class="space-y-1 text-xs sm:text-sm text-slate-500 font-medium text-center sm:text-left">
+            <!-- Vertical Stacked Navigation Links in Light Font -->
+            <div class="flex flex-col space-y-2.5 text-xs font-normal text-slate-400 text-center sm:text-left">
+                <a href="#about" class="hover:text-slate-900 transition-colors">About</a>
+                <a href="#services" class="hover:text-slate-900 transition-colors">Services</a>
+                <a href="#how-it-works" class="hover:text-slate-900 transition-colors">How It Works</a>
+                <a href="#why-groundone" class="hover:text-slate-900 transition-colors">Why GroundOne</a>
+                <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
+            </div>
+
+            <div class="space-y-1 text-xs text-slate-400 font-medium text-center sm:text-left pt-2 border-t border-slate-100 w-full">
                 <p>© 2026 GroundOne. All rights reserved.</p>
-                <p class="text-xs uppercase tracking-widest text-slate-400 font-mono font-bold pt-1">
+                <p class="text-[11px] uppercase tracking-widest text-slate-300 font-mono font-bold pt-1">
                     See. Know. Grow.
                 </p>
             </div>
