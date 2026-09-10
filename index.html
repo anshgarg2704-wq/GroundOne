@@ -55,26 +55,37 @@
             transform: translateY(-1px);
         }
 
-        /* Transparent WhatsApp Button Style */
-        .btn-whatsapp-transparent {
-            background: transparent;
+        /* Glass-Style Transparent Button for Light Backgrounds */
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 15px -2px rgba(15, 23, 42, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.9);
             color: #0f172a;
-            border: 1.5px solid #25d366;
             transition: all 0.3s ease;
         }
-        .btn-whatsapp-transparent:hover {
-            background: rgba(37, 211, 102, 0.08);
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.75);
+            border-color: #ffffff;
+            box-shadow: 0 6px 20px -2px rgba(15, 23, 42, 0.08), inset 0 1px 1px #ffffff;
             transform: translateY(-1px);
         }
 
-        .btn-whatsapp-dark-transparent {
-            background: transparent;
+        /* Glass-Style Transparent Button for Dark Backgrounds */
+        .btn-glass-dark {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18);
             color: #ffffff;
-            border: 1.5px solid #25d366;
             transition: all 0.3s ease;
         }
-        .btn-whatsapp-dark-transparent:hover {
-            background: rgba(37, 211, 102, 0.15);
+        .btn-glass-dark:hover {
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);
             transform: translateY(-1px);
         }
 
@@ -138,8 +149,8 @@
                             <a href="#contact" onclick="toggleMobileMenu()" class="w-full block text-center btn-palette-dark text-white text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-xs">
                                 Request an Audit →
                             </a>
-                            <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center space-x-2 btn-whatsapp-transparent text-slate-900 text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-xs">
-                                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#25d366]"></i>
+                            <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center space-x-2 btn-glass text-slate-900 text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-lg">
+                                <i data-lucide="message-circle" class="w-3.5 h-3.5 text-slate-700"></i>
                                 <span>Chat with us</span>
                             </a>
                         </div>
@@ -147,8 +158,8 @@
                 </div>
 
                 <div class="hidden sm:flex items-center space-x-2.5">
-                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-transparent text-slate-900 text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-full transition-all whitespace-nowrap inline-flex items-center space-x-1.5">
-                        <i data-lucide="message-circle" class="w-4 h-4 text-[#25d366]"></i>
+                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-glass text-slate-900 text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-full transition-all whitespace-nowrap inline-flex items-center space-x-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-slate-700"></i>
                         <span>Chat with us</span>
                     </a>
                     <a href="#contact" class="btn-palette-dark text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all whitespace-nowrap">
@@ -181,8 +192,8 @@
                         <span>Request an Audit</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-transparent font-bold text-xs sm:text-sm tracking-wider uppercase px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-all flex items-center justify-center space-x-2 shadow-2xs">
-                        <i data-lucide="message-circle" class="w-4 h-4 text-[#25d366]"></i>
+                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-glass font-bold text-xs sm:text-sm tracking-wider uppercase px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-all flex items-center justify-center space-x-2">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-slate-700"></i>
                         <span>Chat with us</span>
                     </a>
                 </div>
@@ -573,8 +584,8 @@
                         </h4>
                     </div>
                     <div class="shrink-0 flex flex-col sm:flex-row items-center gap-3">
-                        <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-dark-transparent font-bold text-xs uppercase tracking-wider px-7 py-3.5 sm:py-4 rounded-full transition-all inline-flex items-center space-x-2">
-                            <i data-lucide="message-circle" class="w-4 h-4 text-[#25d366]"></i>
+                        <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-glass-dark font-bold text-xs uppercase tracking-wider px-7 py-3.5 sm:py-4 rounded-full transition-all inline-flex items-center space-x-2">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-white"></i>
                             <span>Chat with us</span>
                         </a>
                         <a href="#contact" class="btn-palette-dark font-bold text-xs uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all inline-flex items-center space-x-2">
