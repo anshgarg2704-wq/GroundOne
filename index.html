@@ -55,6 +55,19 @@
             transform: translateY(-1px);
         }
 
+        /* WhatsApp Button Style */
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #ffffff;
+            box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #20ba5a 0%, #0e7065 100%);
+            box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.5);
+            transform: translateY(-1px);
+        }
+
         .positive-gradient-hero {
             background: radial-gradient(circle at top right, rgba(205, 255, 216, 0.35), transparent 40%),
                         radial-gradient(circle at bottom left, rgba(0, 176, 251, 0.12), transparent 50%),
@@ -91,7 +104,7 @@
                 </div>
             </a>
             
-            <div class="flex items-center space-x-3 sm:space-x-8 ml-auto shrink-0">
+            <div class="flex items-center space-x-3 sm:space-x-4 ml-auto shrink-0">
                 <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-slate-700">
                     <a href="#about" class="hover:text-[#00b0fb] transition-colors">About</a>
                     <a href="#services" class="hover:text-[#00b0fb] transition-colors">Services</a>
@@ -100,7 +113,7 @@
                     <a href="#contact" class="hover:text-[#00b0fb] transition-colors">Contact</a>
                 </nav>
 
-                <!-- Mobile Dropdown Menu (Includes Request an Audit CTA button inside) -->
+                <!-- Mobile Dropdown Menu (Includes Request an Audit and Chat with Us buttons) -->
                 <div class="relative lg:hidden">
                     <button onclick="toggleMobileMenu()" id="menu-btn" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 p-2.5 rounded-xl transition-colors border border-slate-200" aria-label="Toggle Menu">
                         <i data-lucide="menu" class="w-5 h-5 text-[#00b0fb]"></i>
@@ -111,16 +124,24 @@
                         <a href="#how-it-works" onclick="toggleMobileMenu()" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb] rounded-lg">How It Works</a>
                         <a href="#why-groundone" onclick="toggleMobileMenu()" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb] rounded-lg">Why GroundOne</a>
                         <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-sky-50 hover:text-[#00b0fb] rounded-lg">Contact</a>
-                        <div class="pt-2 border-t border-slate-100">
+                        <div class="pt-2 border-t border-slate-100 space-y-2">
                             <a href="#contact" onclick="toggleMobileMenu()" class="w-full block text-center btn-palette-dark text-white text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-xs">
                                 Request an Audit →
+                            </a>
+                            <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()" class="w-full flex items-center justify-center space-x-2 btn-whatsapp text-white text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-xs">
+                                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                                <span>Chat with us</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="hidden sm:flex items-center">
-                    <a href="#contact" class="btn-palette-dark text-white text-xs font-bold uppercase tracking-wider px-6 py-2.5 rounded-full transition-all whitespace-nowrap">
+                <div class="hidden sm:flex items-center space-x-2.5">
+                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-full transition-all whitespace-nowrap inline-flex items-center space-x-1.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>Chat with us</span>
+                    </a>
+                    <a href="#contact" class="btn-palette-dark text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-all whitespace-nowrap">
                         Request an Audit →
                     </a>
                 </div>
@@ -150,9 +171,9 @@
                         <span>Request an Audit</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="#services" class="border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-semibold text-xs sm:text-sm tracking-wider uppercase px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-colors flex items-center justify-center space-x-3 shadow-2xs">
-                        <span>Explore Our Services</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400"></i>
+                    <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp font-bold text-xs sm:text-sm tracking-wider uppercase px-7 sm:px-8 py-3.5 sm:py-4 rounded-full text-center transition-all flex items-center justify-center space-x-2 shadow-md">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>Chat with us</span>
                     </a>
                 </div>
 
@@ -541,7 +562,11 @@
                             <span class="text-[#00b0fb]">But you can know what's happening.</span>
                         </h4>
                     </div>
-                    <div class="shrink-0">
+                    <div class="shrink-0 flex flex-col sm:flex-row items-center gap-3">
+                        <a href="https://wa.me/919939874449" target="_blank" rel="noopener noreferrer" class="btn-whatsapp font-bold text-xs uppercase tracking-wider px-7 py-3.5 sm:py-4 rounded-full transition-all inline-flex items-center space-x-2">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Chat with us</span>
+                        </a>
                         <a href="#contact" class="btn-palette-dark font-bold text-xs uppercase tracking-wider px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all inline-flex items-center space-x-2">
                             <span>Request an audit</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -559,7 +584,7 @@
                 <!-- Left Column -->
                 <div class="lg:col-span-5 space-y-6">
                     <div>
-                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg mb-3 sm:mb-4 shadow-2xs">
+                        <div class="inline-flex items-center space-x-2.5 text-xs sm:text-sm font-sans font-semibold text-slate-700 bg-white border border-slate-200 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg mb-3 sm:mb-4 shadow-2xs">
                             <span class="w-2 h-2 rounded-full bg-slate-700"></span>
                             <span>Contact</span>
                         </div>
@@ -627,7 +652,7 @@
         </div>
     </section>
 
-    <!-- 1. Improved Footer: Details stacked vertically and aligned cleanly -->
+    <!-- Footer -->
     <footer class="py-12 bg-white border-t border-slate-200 text-sm text-slate-500 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center sm:items-start space-y-4">
             <div class="flex items-center space-x-3">
